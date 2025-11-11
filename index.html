@@ -6,9 +6,41 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Multi-step form</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="h-screen w-screen">
+
+  <!-- CONTAINER -->
+  <div id="container" class="h-full w-full grid grid-rows-12 grid-cols-12 border-4 border-blue-600">
+
+    <!-- STEPS -->
+    <div id="steps" class="h-full w-4/12 border-2 border-black">
+
+    </div>
+
+    <!-- PAGES -->
+    <div id="page-1" class="h-10/12 w-8/12 border-2 border-red-600">
+      <div id="border-1" class="h-full w-3/4"></div>
+    </div>
+
+    <!-- GO BACK AND NEXT/SUBMIT BUTTONS -->
+    <div id="back-next-buttons" class="h-2/12 w-4/12 border-2 border-red-600">
+
+    </div>
+
+  </div>
+
   
+  <!-- <div id="page-2" class="h-4/5 w-11/12">
+    <div id="border-2" class="h-full w-3/4 border-2 border-orange-600"></div>
+  </div>
+  <div id="page-3" class="h-4/5 w-11/12">
+    <div id="border-3" class="h-full w-3/4 border-2 border-yellow-600"></div>
+  </div>
+  <div id="page-4" class="h-4/5 w-11/12">
+    <div id="border-4" class="h-full w-3/4 border-2 border-blue-600"></div>
+  </div> -->
+
  
   <script src="index.js"></script>
 </body>
