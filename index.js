@@ -1,3 +1,4 @@
+
 const nextButton = document.getElementById(`next-button`);
 const backButton = document.getElementById(`back-button`);
 let onPage = 1;
@@ -69,20 +70,12 @@ function previousPage(pagesArray, onPage){
 
 }   
 
-// MOVE STEPS CONTAINER STUFF TO JS
-// MAKE ITERABLE
-
 // MAKE OBJECTS or ARRAYS OF THE STEPS INFO SO I CAN JUST PULL THOSE INFOS
 const stepNumbersArray = [1, 2, 3, 4];
 const stepTextForSubTitleArray = [`YOUR INFO`, `SELECT PLAN`, `ADD-ONS`, `SUMMARY`];
 let stepCounter = 0;
 // SIDEBAR CONTAINER
 const sidebarContainer = document.getElementById(`sidebar-container`);
-// create an array or object to pass in info for the locations of the steps 
-// and then pass them into the createStep() function the function while need and row cols arguments
-
-// test for arguments needed so i dont need the arrays above ^^
-// createStep(stepNumberVariable, stepTitle, stepSubTitle); 
 const stepLocations = [
     {name: `step-1`, rowStart: 2, rowEnd: 4}, 
     {name: `step-2`, rowStart: 5, rowEnd: 7}, 
