@@ -7,34 +7,35 @@ const lastPageNumber = 4;
 const pagesArray = [`page1`, `page2`, `page3`, `page4`];
 console.log(`You are on Page 1`);
 
+let nextButtonCounter = 0;
 nextButton.addEventListener(`click`, () => {
     if(onPage < lastPageNumber){
         onPage++;
+        nextButtonCounter++;
         console.log(`Page: ${onPage}. Next button clicked.`);
-        nextPage(pagesArray, onPage);
+        nextPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
     else {
         console.log(`You are on the last page. ${onPage}`);
-        nextPage(pagesArray, onPage);
+        nextPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
-
 });
 
 backButton.addEventListener(`click`, () => {
     if(onPage > firstPageNumber){
         onPage--;
+        nextButtonCounter--;
         console.log(`Page: ${onPage}. back button clicked`);
-        previousPage(pagesArray, onPage);
+        previousPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
     else{
         console.log(`You are on the first page. ${onPage}`);
-        previousPage(pagesArray, onPage);
+        previousPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
-
 });
 
 // NEXT PAGE FUNCTION
-function nextPage(pagesArray, onPage){
+function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
     console.log(`THIS IS THE nextPAGE() function`);
     // BEFORE PRESSING NEXT PAGE
     const previousPage = pagesArray[onPage - 2];
@@ -50,11 +51,16 @@ function nextPage(pagesArray, onPage){
     currentElement.classList.remove(`hidden`);
     currentElement.classList.add(`block`);
 
+    const previousPageContainer = document.getElementById(`${stepsArray[nextButtonCounter - 1]}`);
+    const currentPageContainer = document.getElementById(`${stepsArray[nextButtonCounter]}`);
+
+    currentPageContainer.classList.add(`bg-black`, `text-white`);
+    previousPageContainer.classList.remove(`bg-black`, `text-white`);
 
 }
 
 // PREVIOUS PAGE FUNCTION
-function previousPage(pagesArray, onPage){
+function previousPage(pagesArray, onPage, stepsArray, nextButtonCounter){
     console.log(`THIS IS THE previousPAGE() function`);
     const previousPage = pagesArray[onPage];
     const currentPage = pagesArray[onPage - 1];
@@ -68,6 +74,13 @@ function previousPage(pagesArray, onPage){
     currentElement.classList.add(`block`);
     currentElement.classList.remove(`hidden`);
 
+    const currentPageContainer = document.getElementById(`${stepsArray[nextButtonCounter]}`);
+    const previousPageContainer = document.getElementById(`${stepsArray[nextButtonCounter + 1]}`);
+
+    currentPageContainer.classList.add(`bg-black`, 'text-white');
+    previousPageContainer.classList.remove(`bg-black`, 'text-white');
+
+
 }   
 
 let stepCounter = 0;
@@ -79,51 +92,54 @@ const stepGridLocations = [
     {name: `step-3`, rowStart: 8, rowEnd: 10}, 
     {name: `step-4`, rowStart: 11, rowEnd: 13}, 
 ]
+
 // SIDEBAR CONTAINER
 const sidebarContainer = document.getElementById(`sidebar-container`);
 
 function createStep(stepIndex, stepNumberOrder, stepSubtitleText, stepRowColCords){
-    // STEP 1 CONTAINER
-    const step1Container = document.createElement(`div`);
-    sidebarContainer.appendChild(step1Container);
-    step1Container.id = `step-number-${stepNumberOrder[0]}`;
-    step1Container.className = `row-start-${stepRowColCords[stepIndex].rowStart} row-end-${stepRowColCords[stepIndex].rowEnd} col-start-2 col-end-12 flex relative`;
+    // STEP CONTAINER
+    const stepContainer = document.createElement(`div`);
+    sidebarContainer.appendChild(stepContainer);
+    stepContainer.id = `step-container-${stepNumberOrder[stepIndex]}`;
+    stepContainer.className = `row-start-${stepRowColCords[stepIndex].rowStart} row-end-${stepRowColCords[stepIndex].rowEnd} col-start-2 col-end-12 flex relative`;
 
     // CIRCLE
-    const step1Circle = document.createElement(`div`);
-    step1Container.appendChild(step1Circle);
-    step1Circle.id = `step-number-1`;
-    step1Circle.className = `h-full w-1/3 flex justify-center items-center text-3xl`;
-    const step1CircleNumber = document.createElement(`span`);
-    step1Circle.appendChild(step1CircleNumber);
-    step1CircleNumber.id = `step-1-circle`;
-    step1CircleNumber.className = `h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white`;
-    step1CircleNumber.textContent = `${stepNumberOrder[stepIndex]}`;
+    const stepCircle = document.createElement(`div`);
+    stepContainer.appendChild(stepCircle);
+    stepCircle.id = `step-circle-${stepNumberOrder[stepIndex]}`;
+    stepCircle.className = `h-full w-1/3 flex justify-center items-center text-3xl`;
+    const stepCircleNumber = document.createElement(`span`);
+    stepCircle.appendChild(stepCircleNumber);
+    stepCircleNumber.id = `step-circle-number-${stepNumberOrder[stepIndex]}`;
+    stepCircleNumber.className = `h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white`;
+    stepCircleNumber.textContent = `${stepNumberOrder[stepIndex]}`;
 
     // STEP TEXTS
-    const step1TextContainer = document.createElement(`div`);
-    step1Container.appendChild(step1TextContainer);
-    step1TextContainer.id = `step-1-text-container`;
-    step1TextContainer.className = `h-full w-2/3`;
-    // title
-    const step1Title = document.createElement(`div`);
-    step1TextContainer.appendChild(step1Title);
-    step1Title.id = `step-1-title`;
-    step1Title.className = `h-1/2 w-full text-xl font-thin text-white`;
-    step1Title.textContent = `Step ${stepNumberOrder[stepIndex]}`;
-    // subtitle
-    const step1SubTitle = document.createElement(`div`);
-    step1TextContainer.appendChild(step1SubTitle);
-    step1SubTitle.id = `step-1-subtitle`;
-    step1SubTitle.className = `h-1/2 w-full text-2xl font-semibold text-white`;
-    step1SubTitle.textContent = `${stepSubtitleText[stepIndex]}`;
+    const stepTextContainer = document.createElement(`div`);
+    stepContainer.appendChild(stepTextContainer);
+    stepTextContainer.id = `step-text-container-${stepNumberOrder[stepIndex]}`;
+    stepTextContainer.className = `h-full w-2/3`;
+        // title
+    const stepTitle = document.createElement(`div`);
+    stepTextContainer.appendChild(stepTitle);
+    stepTitle.id = `step-title-${stepNumberOrder[stepIndex]}`;
+    stepTitle.className = `h-1/2 w-full text-xl font-thin text-white`;
+    stepTitle.textContent = `Step ${stepNumberOrder[stepIndex]}`;
+        // subtitle
+    const stepSubtitle = document.createElement(`div`);
+    stepTextContainer.appendChild(stepSubtitle);
+    stepSubtitle.id = `step-subtitle-${stepNumberOrder[stepIndex]}`;
+    stepSubtitle.className = `h-1/2 w-full text-2xl font-semibold text-white`;
+    stepSubtitle.textContent = `${stepSubtitleText[stepIndex]}`;
 
-    console.log(stepCounter);
+    // console.log(stepIndex);
     stepCounter++;
+
+    return stepContainer.id;
 }
 
+let stepsArray = [];
 for(let i = 0; i < 4; i++){
-    createStep(stepCounter, stepNumberArray, stepTextForSubTitleArray, stepGridLocations);
+    const step = createStep(stepCounter, stepNumberArray, stepTextForSubTitleArray, stepGridLocations);
+    stepsArray.push(step);
 };
-
-
