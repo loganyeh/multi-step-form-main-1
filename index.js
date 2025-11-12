@@ -12,11 +12,11 @@ nextButton.addEventListener("click", () => {
     if(onPage < lastPageNumber){
         onPage++;
         console.log(`Page: ${onPage}. Next button clicked.`);
-        nextPage();
+        nextPage(pagesArray, onPage);
     }
     else {
         console.log(`You are on the last page. ${onPage}`);
-        nextPage();
+        nextPage(pagesArray, onPage);
     }
 
 });
@@ -33,10 +33,22 @@ backButton.addEventListener("click", () => {
 });
 
 // NEXT PAGE FUNCTION
-function nextPage(){
-    
+function nextPage(pagesArray, onPage){
     console.log(`THIS IS THE nextPAGE() function`);
-    
+    // BEFORE PRESSING NEXT PAGE
+    const previousPage = pagesArray[onPage - 2];
+    // AFTER PRESSING NEXT PAGE
+    const currentPage = pagesArray[onPage - 1];
+
+    const previousElement = document.getElementById(`${previousPage}`);
+    const currentElement = document.getElementById(`${currentPage}`);
+
+    previousElement.classList.add("hidden");
+    previousElement.classList.remove("block");
+
+    currentElement.classList.remove("hidden");
+    currentElement.classList.add("block");
+
 
 }
 
