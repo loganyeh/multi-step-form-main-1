@@ -25,9 +25,11 @@ backButton.addEventListener("click", () => {
     if(onPage > firstPageNumber){
         onPage--;
         console.log(`Page: ${onPage}. back button clicked`);
+        previousPage(pagesArray, onPage);
     }
     else{
         console.log(`You are on the first page. ${onPage}`);
+        previousPage(pagesArray, onPage);
     }
 
 });
@@ -53,7 +55,18 @@ function nextPage(pagesArray, onPage){
 }
 
 // PREVIOUS PAGE FUNCTION
-// function previousPage(pageNumberVariable, pagesArray){
-//     console.log("THIS IS THE previousPAGE() function");
+function previousPage(pagesArray, onPage){
+    console.log("THIS IS THE previousPAGE() function");
+    const previousPage = pagesArray[onPage];
+    const currentPage = pagesArray[onPage - 1];
 
-// }   
+    const previousElement = document.getElementById(`${previousPage}`);
+    const currentElement = document.getElementById(`${currentPage}`);
+
+    previousElement.classList.add("hidden");
+    previousElement.classList.remove("block");
+
+    currentElement.classList.add("block");
+    currentElement.classList.remove("hidden");
+
+}   
