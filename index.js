@@ -50,6 +50,8 @@ function nextPage(pagesArray, onPage){
     currentElement.classList.remove(`hidden`);
     currentElement.classList.add(`block`);
 
+    // const currentPageCircle = document.getElementById
+
 
 }
 
@@ -84,45 +86,48 @@ const sidebarContainer = document.getElementById(`sidebar-container`);
 
 function createStep(stepIndex, stepNumberOrder, stepSubtitleText, stepRowColCords){
     // STEP 1 CONTAINER
-    const step1Container = document.createElement(`div`);
-    sidebarContainer.appendChild(step1Container);
-    step1Container.id = `step-number-${stepNumberOrder[0]}`;
-    step1Container.className = `row-start-${stepRowColCords[stepIndex].rowStart} row-end-${stepRowColCords[stepIndex].rowEnd} col-start-2 col-end-12 flex relative`;
+    const stepContainer = document.createElement(`div`);
+    sidebarContainer.appendChild(stepContainer);
+    stepContainer.id = `step-number-${stepNumberOrder[0]}`;
+    stepContainer.className = `row-start-${stepRowColCords[stepIndex].rowStart} row-end-${stepRowColCords[stepIndex].rowEnd} col-start-2 col-end-12 flex relative`;
 
     // CIRCLE
-    const step1Circle = document.createElement(`div`);
-    step1Container.appendChild(step1Circle);
-    step1Circle.id = `step-number-1`;
-    step1Circle.className = `h-full w-1/3 flex justify-center items-center text-3xl`;
-    const step1CircleNumber = document.createElement(`span`);
-    step1Circle.appendChild(step1CircleNumber);
-    step1CircleNumber.id = `step-1-circle`;
-    step1CircleNumber.className = `h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white`;
-    step1CircleNumber.textContent = `${stepNumberOrder[stepIndex]}`;
+    const stepCircle = document.createElement(`div`);
+    stepContainer.appendChild(stepCircle);
+    stepCircle.id = `step-number-1`;
+    stepCircle.className = `h-full w-1/3 flex justify-center items-center text-3xl`;
+    const stepCircleNumber = document.createElement(`span`);
+    stepCircle.appendChild(stepCircleNumber);
+    stepCircleNumber.id = `step-1-circle`;
+    stepCircleNumber.className = `h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white`;
+    stepCircleNumber.textContent = `${stepNumberOrder[stepIndex]}`;
 
     // STEP TEXTS
-    const step1TextContainer = document.createElement(`div`);
-    step1Container.appendChild(step1TextContainer);
-    step1TextContainer.id = `step-1-text-container`;
-    step1TextContainer.className = `h-full w-2/3`;
+    const stepTextContainer = document.createElement(`div`);
+    stepContainer.appendChild(stepTextContainer);
+    stepTextContainer.id = `step-1-text-container`;
+    stepTextContainer.className = `h-full w-2/3`;
     // title
-    const step1Title = document.createElement(`div`);
-    step1TextContainer.appendChild(step1Title);
-    step1Title.id = `step-1-title`;
-    step1Title.className = `h-1/2 w-full text-xl font-thin text-white`;
-    step1Title.textContent = `Step ${stepNumberOrder[stepIndex]}`;
+    const stepTitle = document.createElement(`div`);
+    stepTextContainer.appendChild(stepTitle);
+    stepTitle.id = `step-1-title`;
+    stepTitle.className = `h-1/2 w-full text-xl font-thin text-white`;
+    stepTitle.textContent = `Step ${stepNumberOrder[stepIndex]}`;
     // subtitle
-    const step1SubTitle = document.createElement(`div`);
-    step1TextContainer.appendChild(step1SubTitle);
-    step1SubTitle.id = `step-1-subtitle`;
-    step1SubTitle.className = `h-1/2 w-full text-2xl font-semibold text-white`;
-    step1SubTitle.textContent = `${stepSubtitleText[stepIndex]}`;
+    const stepSubtitle = document.createElement(`div`);
+    stepTextContainer.appendChild(stepSubtitle);
+    stepSubtitle.id = `step-1-subtitle`;
+    stepSubtitle.className = `h-1/2 w-full text-2xl font-semibold text-white`;
+    stepSubtitle.textContent = `${stepSubtitleText[stepIndex]}`;
 
-    console.log(stepCounter);
+    console.log(stepIndex);
     stepCounter++;
 }
 
-for(let i = 0; i < 4; i++){
+// FIRST STEP
+createStep(stepCounter, stepNumberArray, stepTextForSubTitleArray, stepGridLocations);
+
+for(let i = 0; i < 3; i++){
     createStep(stepCounter, stepNumberArray, stepTextForSubTitleArray, stepGridLocations);
 };
 
