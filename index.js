@@ -54,8 +54,9 @@ function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
     const previousPageContainer = document.getElementById(`${stepsArray[nextButtonCounter - 1]}`);
     const currentPageContainer = document.getElementById(`${stepsArray[nextButtonCounter]}`);
 
-    currentPageContainer.classList.add(`bg-black`, `text-white`);
-    previousPageContainer.classList.remove(`bg-black`, `text-white`);
+    currentPageContainer.classList.add(`bg-blue-200`);
+    previousPageContainer.classList.remove(`bg-blue-200`);
+
 
 }
 
@@ -77,9 +78,8 @@ function previousPage(pagesArray, onPage, stepsArray, nextButtonCounter){
     const currentPageContainer = document.getElementById(`${stepsArray[nextButtonCounter]}`);
     const previousPageContainer = document.getElementById(`${stepsArray[nextButtonCounter + 1]}`);
 
-    currentPageContainer.classList.add(`bg-black`, 'text-white');
-    previousPageContainer.classList.remove(`bg-black`, 'text-white');
-
+    currentPageContainer.classList.add(`bg-blue-200`);
+    previousPageContainer.classList.remove(`bg-blue-200`);
 
 }   
 
@@ -111,7 +111,7 @@ function createStep(stepIndex, stepNumberOrder, stepSubtitleText, stepRowColCord
     const stepCircleNumber = document.createElement(`span`);
     stepCircle.appendChild(stepCircleNumber);
     stepCircleNumber.id = `step-circle-number-${stepNumberOrder[stepIndex]}`;
-    stepCircleNumber.className = `h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white`;
+    stepCircleNumber.className = `h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium`;
     stepCircleNumber.textContent = `${stepNumberOrder[stepIndex]}`;
 
     // STEP TEXTS
@@ -135,7 +135,7 @@ function createStep(stepIndex, stepNumberOrder, stepSubtitleText, stepRowColCord
     // console.log(stepIndex);
     stepCounter++;
 
-    return stepContainer.id;
+    return stepCircleNumber.id;
 }
 
 let stepsArray = [];
@@ -143,3 +143,14 @@ for(let i = 0; i < 4; i++){
     const step = createStep(stepCounter, stepNumberArray, stepTextForSubTitleArray, stepGridLocations);
     stepsArray.push(step);
 };
+
+// DEFAULT PAGE @ STARTUP
+stepsArray.forEach((stepID, index) => {
+    const stepElement = document.getElementById(`${stepID}`);
+    if(index === 0){
+        stepElement.classList.add(`bg-blue-200`, `text-black`);
+    }
+    else{
+        stepElement.classList.add(`text-white`);
+    }
+})
