@@ -1,5 +1,3 @@
-
-
 const nextButton = document.getElementById("next-button");
 const backButton = document.getElementById("back-button");
 let onPage = 1;
@@ -70,3 +68,7 @@ function previousPage(pagesArray, onPage){
     currentElement.classList.remove("hidden");
 
 }   
+
+// MOVE STEPS CONTAINER STUFF TO JS
+// MAKE ITERABLE
+
