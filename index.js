@@ -54,8 +54,8 @@ function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
     const previousPageContainer = document.getElementById(`${stepsArray[nextButtonCounter - 1]}`);
     const currentPageContainer = document.getElementById(`${stepsArray[nextButtonCounter]}`);
 
-    currentPageContainer.classList.add(`bg-black`, `text-white`);
-    previousPageContainer.classList.remove(`bg-black`, `text-white`);
+    currentPageContainer.classList.add(`bg-blue-200`);
+    previousPageContainer.classList.remove(`bg-blue-200`);
 
 }
 
@@ -77,8 +77,8 @@ function previousPage(pagesArray, onPage, stepsArray, nextButtonCounter){
     const currentPageContainer = document.getElementById(`${stepsArray[nextButtonCounter]}`);
     const previousPageContainer = document.getElementById(`${stepsArray[nextButtonCounter + 1]}`);
 
-    currentPageContainer.classList.add(`bg-black`, 'text-white');
-    previousPageContainer.classList.remove(`bg-black`, 'text-white');
+    currentPageContainer.classList.add(`bg-blue-200`);
+    previousPageContainer.classList.remove(`bg-blue-200`);
 
 
 }   
@@ -135,7 +135,7 @@ function createStep(stepIndex, stepNumberOrder, stepSubtitleText, stepRowColCord
     // console.log(stepIndex);
     stepCounter++;
 
-    return stepContainer.id;
+    return stepCircleNumber.id;
 }
 
 let stepsArray = [];
