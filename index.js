@@ -88,35 +88,35 @@ function createStep(stepIndex, stepNumberOrder, stepSubtitleText, stepRowColCord
     // STEP 1 CONTAINER
     const stepContainer = document.createElement(`div`);
     sidebarContainer.appendChild(stepContainer);
-    stepContainer.id = `step-number-${stepNumberOrder[0]}`;
+    stepContainer.id = `step-container-${stepNumberOrder[stepIndex]}`;
     stepContainer.className = `row-start-${stepRowColCords[stepIndex].rowStart} row-end-${stepRowColCords[stepIndex].rowEnd} col-start-2 col-end-12 flex relative`;
 
     // CIRCLE
     const stepCircle = document.createElement(`div`);
     stepContainer.appendChild(stepCircle);
-    stepCircle.id = `step-number-1`;
+    stepCircle.id = `step-circle-${stepNumberOrder[stepIndex]}`;
     stepCircle.className = `h-full w-1/3 flex justify-center items-center text-3xl`;
     const stepCircleNumber = document.createElement(`span`);
     stepCircle.appendChild(stepCircleNumber);
-    stepCircleNumber.id = `step-1-circle`;
+    stepCircleNumber.id = `step-circle-number-${stepNumberOrder[stepIndex]}`;
     stepCircleNumber.className = `h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white`;
     stepCircleNumber.textContent = `${stepNumberOrder[stepIndex]}`;
 
     // STEP TEXTS
     const stepTextContainer = document.createElement(`div`);
     stepContainer.appendChild(stepTextContainer);
-    stepTextContainer.id = `step-1-text-container`;
+    stepTextContainer.id = `step-text-container-${stepNumberOrder[stepIndex]}`;
     stepTextContainer.className = `h-full w-2/3`;
     // title
     const stepTitle = document.createElement(`div`);
     stepTextContainer.appendChild(stepTitle);
-    stepTitle.id = `step-1-title`;
+    stepTitle.id = `step-title-${stepNumberOrder[stepIndex]}`;
     stepTitle.className = `h-1/2 w-full text-xl font-thin text-white`;
     stepTitle.textContent = `Step ${stepNumberOrder[stepIndex]}`;
     // subtitle
     const stepSubtitle = document.createElement(`div`);
     stepTextContainer.appendChild(stepSubtitle);
-    stepSubtitle.id = `step-1-subtitle`;
+    stepSubtitle.id = `step-subtitle-${stepNumberOrder[stepIndex]}`;
     stepSubtitle.className = `h-1/2 w-full text-2xl font-semibold text-white`;
     stepSubtitle.textContent = `${stepSubtitleText[stepIndex]}`;
 
