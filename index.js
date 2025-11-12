@@ -72,8 +72,8 @@ function previousPage(pagesArray, onPage){
 
 // MAKE OBJECTS or ARRAYS OF THE STEPS INFO SO I CAN JUST PULL THOSE INFOS
 const stepNumbersArray = [1, 2, 3, 4];
-const stepTextForSubTitleArray = [`YOUR INFO`, `SELECT PLAN`, `ADD-ONS`, `SUMMARY`];
 let stepCounter = 0;
+const stepTextForSubTitleArray = [`YOUR INFO`, `SELECT PLAN`, `ADD-ONS`, `SUMMARY`];
 // SIDEBAR CONTAINER
 const sidebarContainer = document.getElementById(`sidebar-container`);
 const stepLocations = [
@@ -83,50 +83,13 @@ const stepLocations = [
     {name: `step-4`, rowStart: 11, rowEnd: 13}, 
 ]
 
-// function createStep(){
-//     // STEP 1 CONTAINER
-//     const step1Container = document.createElement(`div`);
-//     sidebarContainer.appendChild(step1Container);
-//     step1Container.id = `step-number-${stepNumbersArray[0]}`;
-//     step1Container.className = `row-start-2 row-end-4 col-start-2 col-end-12 flex relative`;
-//     // CIRCLE
-//     const step1Circle = document.createElement(`div`);
-//     step1Container.appendChild(step1Circle);
-//     step1Circle.id = `step-number-1`;
-//     step1Circle.className = `h-full w-1/3 flex justify-center items-center text-3xl`;
-//     const step1CircleNumber = document.createElement(`span`);
-//     step1Circle.appendChild(step1CircleNumber);
-//     step1CircleNumber.id = `step-1-circle`;
-//     step1CircleNumber.className = `h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white`;
-//     step1CircleNumber.textContent = `${stepNumbersArray[stepCounter]}`;
-
-//     // STEP TEXTS
-//     const step1TextContainer = document.createElement(`div`);
-//     step1Container.appendChild(step1TextContainer);
-//     step1TextContainer.id = `step-1-text-container`;
-//     step1TextContainer.className = `h-full w-2/3`;
-//     // title
-//     const step1Title = document.createElement(`div`);
-//     step1TextContainer.appendChild(step1Title);
-//     step1Title.id = `step-1-title`;
-//     step1Title.className = `h-1/2 w-full text-xl font-thin text-white`;
-//     step1Title.textContent = `Step 1`;
-//     // subtitle
-//     const step1SubTitle = document.createElement(`div`);
-//     step1TextContainer.appendChild(step1SubTitle);
-//     step1SubTitle.id = `step-1-subtitle`;
-//     step1SubTitle.className = `h-1/2 w-full text-2xl font-semibold text-white`;
-//     step1SubTitle.textContent = `YOUR INFO`;
-
-//     console.log(stepCounter);
-//     stepCounter++;
-// }
-function createStep(stepNumberVariable, stepLocations){
+function createStep(stepNumberVariable, stepLocations, stepTextInfoArray){
     // STEP 1 CONTAINER
     const step1Container = document.createElement(`div`);
     sidebarContainer.appendChild(step1Container);
     step1Container.id = `step-number-${stepNumbersArray[0]}`;
     step1Container.className = `row-start-${stepLocations[stepNumberVariable].rowStart} row-end-${stepLocations[stepNumberVariable].rowEnd} col-start-2 col-end-12 flex relative`;
+
     // CIRCLE
     const step1Circle = document.createElement(`div`);
     step1Container.appendChild(step1Circle);
@@ -136,7 +99,7 @@ function createStep(stepNumberVariable, stepLocations){
     step1Circle.appendChild(step1CircleNumber);
     step1CircleNumber.id = `step-1-circle`;
     step1CircleNumber.className = `h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white`;
-    step1CircleNumber.textContent = `${stepNumbersArray[stepCounter]}`;
+    step1CircleNumber.textContent = `${stepNumbersArray[stepNumberVariable]}`;
 
     // STEP TEXTS
     const step1TextContainer = document.createElement(`div`);
@@ -148,20 +111,22 @@ function createStep(stepNumberVariable, stepLocations){
     step1TextContainer.appendChild(step1Title);
     step1Title.id = `step-1-title`;
     step1Title.className = `h-1/2 w-full text-xl font-thin text-white`;
-    step1Title.textContent = `Step 1`;
+    step1Title.textContent = `Step ${stepNumbersArray[stepNumberVariable]}`;
     // subtitle
     const step1SubTitle = document.createElement(`div`);
     step1TextContainer.appendChild(step1SubTitle);
     step1SubTitle.id = `step-1-subtitle`;
     step1SubTitle.className = `h-1/2 w-full text-2xl font-semibold text-white`;
-    step1SubTitle.textContent = `YOUR INFO`;
+    step1SubTitle.textContent = `${stepTextInfoArray[stepNumberVariable]}`;
 
     console.log(stepCounter);
     stepCounter++;
 }
 
+
+
 for(let i = 0; i < 4; i++){
-    createStep(stepCounter, stepLocations);
+    createStep(stepCounter, stepLocations, stepTextForSubTitleArray);
 };
 
 
