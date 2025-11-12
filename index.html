@@ -35,14 +35,22 @@
 
         <!-- PAGE 1 -->
         <div id="page1" class="block grid grid-rows-12 grid-cols-12 h-full w-full">
-          <div id="page1-container" class="row-start-2 row-end-12 col-start-2 col-end-12 border-2 border-red-600">
-            <!-- LEFT OFF HERE -->
-            <!-- TRYING TO MAKE THE FIRST PAGE OF THE FORM THING -->
+          <div id="page1-container" class="grid grid-rows-12 grid-cols-12 row-start-2 row-end-12 col-start-2 col-end-12 border-2 border-red-600">
+            <h1 class="row-start-1 row-end-3 col-start-1 col-end-13 border-2 border-red-600">Personal Info</h1>
+            <h2 class="row-start-3 row-end-4 col-start-1 col-end-13 border-2 border-red-600">Please provide your name, email address, and phone number.</h2>
+
+            <!-- NAME -->
+            <label class="row-start-4 row-end-5 col-start-1 col-end-13 border-2 border-red-600" for="name">Name</label>
+            <input id="name" class="row-start-5 row-end-7 col-start-1 col-end-13 border-2 border-black rounded-md" type="text" placeholder="e.g. Stephen King">
+            <!-- EMAIL ADDRESS -->
+            <label class="row-start-7 row-end-8 col-start-1 col-end-13 border-2 border-red-600" for="email-address">Email Address</label>
+            <input id="email-address" class="row-start-8 row-end-10 col-start-1 col-end-13 border-2 border-black rounded-md" type="text" placeholder="e.g. stephenking@lorem.com">
+            <!-- PHONE NUMBER -->
+            <label class="row-start-10 row-end-11 col-start-1 col-end-13 border-2 border-red-600" for="phone-number">Phone Number</label>
+            <input id="phone-number" class="m-4 row-start-11 row-end-13 col-start-1 col-end-13 border-2 border-black rounded-md" type="text" placeholder="e.g. +1 234 567 890">
+
           </div>
         </div>
-
-        <!-- LEFT OFF HERE  -->
-        <!-- GET LAYOUT OFF BUTTONS AT BOTTOM TO GIVE IDEA OF WHERE EVERYTHIGN GOES -->
 
         
         <div id="page2" class="hidden h-full w-full bg-orange-200">Page 2</div>
