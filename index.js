@@ -73,38 +73,42 @@ function previousPage(pagesArray, onPage){
 // MAKE ITERABLE
 
 // MAKE OBJECTS or ARRAYS OF THE STEPS INFO SO I CAN JUST PULL THOSE INFOS
-const stepsContainer = document.getElementById("steps-container");
+const stepNumbersForCircle = [];
+const stepTextForTitle = [];
+const stepTextForSubTitle = [];
+// SIDEBAR CONTAINER
+const sidebarContainer = document.getElementById("sidebar-container");
 
 // STEP 1 CONTAINER
 const step1Container = document.createElement("div");
-stepsContainer.appendChild(step1Container);
+sidebarContainer.appendChild(step1Container);
 step1Container.id = "step-number-1";
 step1Container.className = "row-start-2 row-end-4 col-start-2 col-end-12 flex relative";
-// STEP 1 CIRCLE BORDER \ LEFT SIDE
-const stepNumber1 = document.createElement("div");
-step1Container.appendChild(stepNumber1);
-stepNumber1.id = "step-number-1";
-stepNumber1.className = "h-full w-1/3 flex justify-center items-center text-3xl";
-const span1 = document.createElement("span");
-stepNumber1.appendChild(span1);
-span1.id = "span-1";
-span1.className = "h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white";
-span1.textContent = "1";
+// CIRCLE
+const step1Circle = document.createElement("div");
+step1Container.appendChild(step1Circle);
+step1Circle.id = "step-number-1";
+step1Circle.className = "h-full w-1/3 flex justify-center items-center text-3xl";
+const step1CircleNumber = document.createElement("span");
+step1Circle.appendChild(step1CircleNumber);
+step1CircleNumber.id = "step-1-circle";
+step1CircleNumber.className = "h-18 w-18 flex justify-center items-center rounded-full border-2 border-white font-medium text-white";
+step1CircleNumber.textContent = "1";
 
-// STEP 1 TEXTS \ RIGHT SIDE
-const step1Number = document.createElement("div");
-step1Container.appendChild(step1Number);
-step1Number.id = "step-1-number";
-step1Number.className = "h-full w-2/3";
-// TOP TEXT 1
+// STEP TEXTS
+const step1TextContainer = document.createElement("div");
+step1Container.appendChild(step1TextContainer);
+step1TextContainer.id = "step-1-text-container";
+step1TextContainer.className = "h-full w-2/3";
+// title
 const step1Title = document.createElement("div");
-step1Number.appendChild(step1Title);
+step1TextContainer.appendChild(step1Title);
 step1Title.id = "step-1-title";
 step1Title.className = "h-1/2 w-full text-xl font-thin text-white";
 step1Title.textContent = "Step 1";
-// BOTTOM TEXT 1
-const step1Text = document.createElement("div");
-step1Number.appendChild(step1Text);
-step1Text.id = "step-1-text";
-step1Text.className = "h-1/2 w-full text-2xl font-semibold text-white";
-step1Text.textContent = "YOUR INFO";
+// subtitle
+const step1SubTitle = document.createElement("div");
+step1TextContainer.appendChild(step1SubTitle);
+step1SubTitle.id = "step-1-subtitle";
+step1SubTitle.className = "h-1/2 w-full text-2xl font-semibold text-white";
+step1SubTitle.textContent = "YOUR INFO";
