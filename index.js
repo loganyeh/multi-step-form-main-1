@@ -73,9 +73,8 @@ function previousPage(pagesArray, onPage){
 // MAKE ITERABLE
 
 // MAKE OBJECTS or ARRAYS OF THE STEPS INFO SO I CAN JUST PULL THOSE INFOS
-const stepNumbersForCircle = [];
-const stepTextForTitle = [];
-const stepTextForSubTitle = [];
+const stepNumbers = [1, 2, 3, 4];
+const stepTextForSubTitle = ["YOUR INFO", "SELECT PLAN", "ADD-ONS", "SUMMARY"];
 // SIDEBAR CONTAINER
 const sidebarContainer = document.getElementById("sidebar-container");
 
