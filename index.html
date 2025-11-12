@@ -31,23 +31,23 @@
     <div id="right-side-of-page" class="h-full w-9/12 border-4 border-red-600">
 
       <!-- PAGES -->
-      <div id="pages-container" class="h-10/12 w-full">
+      <div id="pages-container" class="h-10/12 w-full border-4 border-purple-600">
 
         <!-- PAGE 1 -->
         <div id="page1" class="block grid grid-rows-12 grid-cols-12 h-full w-full">
-          <div id="page1-container" class="grid grid-rows-12 grid-cols-12 row-start-2 row-end-12 col-start-2 col-end-12 border-2 border-red-600">
-            <h1 class="flex items-end row-start-1 row-end-3 col-start-1 col-end-13 mb-2 font-bold text-5xl text-blue-900 border-2 border-red-600">Personal info</h1>
-            <h2 class="row-start-3 row-end-4 col-start-1 col-end-13 text-xl text-gray-500 border-2 border-red-600">Please provide your name, email address, and phone number.</h2>
+          <div id="page1-container" class="grid grid-rows-12 grid-cols-12 row-start-2 row-end-12 col-start-2 col-end-12">
+            <h1 class="flex items-end row-start-1 row-end-3 col-start-1 col-end-13 mb-2 font-bold text-5xl text-blue-900">Personal info</h1>
+            <h2 class="row-start-3 row-end-4 col-start-1 col-end-13 text-xl text-gray-500">Please provide your name, email address, and phone number.</h2>
 
             <!-- NAME -->
-            <label class="flex items-end row-start-4 row-end-5 col-start-1 col-end-13 text-xl text-blue-800 border-2 border-red-600" for="name">Name</label>
-            <input id="name" class="mt-2 mr-12 mb-6 row-start-5 row-end-7 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.Stephen King">
+            <label class="flex items-end row-start-4 row-end-5 col-start-1 col-end-13 text-xl text-blue-900" for="name">Name</label>
+            <input id="name" class="mt-2 mr-12 mb-6 row-start-5 row-end-7 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.Stephen King" required>
             <!-- EMAIL ADDRESS -->
-            <label class="flex items-end row-start-7 row-end-8 col-start-1 col-end-13 text-xl text-blue-800 border-2 border-red-600" for="email-address">Email Address</label>
-            <input id="email-address" class="mt-2 mr-12 mb-6 row-start-8 row-end-10 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.stephenking@lorem.com">
+            <label class="flex items-end row-start-7 row-end-8 col-start-1 col-end-13 text-xl text-blue-900" for="email-address">Email Address</label>
+            <input id="email-address" class="mt-2 mr-12 mb-6 row-start-8 row-end-10 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.stephenking@lorem.com" required>
             <!-- PHONE NUMBER -->
-            <label class="flex items-end row-start-10 row-end-11 col-start-1 col-end-13 text-xl text-blue-800 border-2 border-red-600" for="phone-number">Phone Number</label>
-            <input id="phone-number" class="mt-2 mr-12 mb-6 row-start-11 row-end-13 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.+1 234 567 890">
+            <label class="flex items-end row-start-10 row-end-11 col-start-1 col-end-13 text-xl text-blue-900" for="phone-number">Phone Number</label>
+            <input id="phone-number" class="mt-2 mr-12 mb-6 row-start-11 row-end-13 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.+1 234 567 890" required>
 
           </div>
         </div>
@@ -62,7 +62,8 @@
       <!-- GO BACK AND NEXT/SUBMIT BUTTONS -->
       <div id="back-next-buttons" class="h-2/12 w-full grid grid-rows-12 grid-cols-25">
         <button id="back-button" class="row-start-3 row-end-8 col-start-5 col-end-8 text-2xl text-gray-500 hover:text-blue-800 hover:underline active:bg-red-400 cursor-pointer">Go Back</button>
-        <button id="next-button" class="row-start-3 row-end-8 col-start-20 col-end-23 text-2xl text-white rounded-2xl bg-blue-900 hover:bg-blue-800 active:bg-green-400 cursor-pointer shadow-sm">Next Step</button>
+        <button id="next-button" class="row-start-3 row-end-8 col-start-20 col-end-23 text-2xl text-white rounded-2xl bg-blue-900 hover:bg-blue-800 active:bg-green-400 cursor-pointer shadow-sm" type="submit">Next Step</button>
+        <!-- LEFT OFF HERE THE INPUT AND SUBMIT BUTTON MIGHT NEED TO BE IN THE SAME FORM ELEMENT THIGN IDK -->
       </div>
     </div>
 
