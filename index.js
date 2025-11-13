@@ -58,14 +58,19 @@ monthlyToggleCircle.addEventListener(`click`, () => {
 })
 yearlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked yearly toggle`);
-})
-monthlyToggleText.addEventListener(`click`, () => {
-    console.log(`clicked monthly text`);
-})
-yearlyToggleText.addEventListener(`click`, () => {
-    console.log(`clicked yearly text`);
-})
 
+    yearlyToggleCircle.classList.remove(`bg-white`, `cursor-pointer`);
+    yearlyToggleCircle.classList.add(`bg-blue-900`);
+    yearlyToggleText.classList.remove(`text-white`);
+    yearlyToggleText.classList.add(`text-gray-400`);
+
+    monthlyToggleCircle.classList.add(`bg-white`, `cursor-pointer`);
+    monthlyToggleCircle.classList.remove(`bg-blue-900`);
+    monthlyToggleText.classList.add(`text-blue-900`);
+    monthlyToggleText.classList.remove(`text-gray-400`);
+
+
+})
 
 // NEXT PAGE FUNCTION
 function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
