@@ -24,6 +24,12 @@ const arcadeYearFreeMonths = document.getElementById(`arcade-yearly-free-months`
 const advancedYearFreeMonths = document.getElementById(`advanced-yearly-free-months`);
 const proYearFreeMonths = document.getElementById(`pro-yearly-free-months`);
 
+    // PICK ADD-ONS DOMS
+const onlineServiceContainer = document.getElementById(`online-service-container`);
+const largeStorageContainer = document.getElementById(`large-storage-container`);
+const customizableProfileContainer = document.getElementById(`customizable-profile-container`);
+const onlineServiceCheckmarkEmoji = document.getElementById(`online-service-checkmark-emoji`);
+
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
 nextButton.addEventListener(`click`, () => {
@@ -138,6 +144,33 @@ proTier.addEventListener(`click`, () => {
     proTier.classList.remove(`bg-white`, `border-gray-400`);
     proTier.classList.add(`bg-gray-50`, `border-purple-500`);
 });
+
+    // PICK ADD-ONS EVENT LISTENERS
+let isOnlineService = false; 
+onlineServiceContainer.addEventListener(`click`, () => {
+    console.log(`Click online service container`);
+
+    isOnlineService = !isOnlineService;
+    if(isOnlineService){
+        console.log(`checked`);
+
+        onlineServiceContainer.classList.add(`bg-gray-50`, `border-purple-500`);
+        onlineServiceContainer.classList.remove(`bg-white`, `border-gray-400`);
+
+        onlineServiceCheckmarkEmoji.classList.add(`block`);
+        onlineServiceCheckmarkEmoji.classList.remove(`hidden`);
+    }
+    else{
+        console.log(`unchecked`);
+
+        onlineServiceContainer.classList.remove(`bg-gray-50`, `border-purple-500`);
+        onlineServiceContainer.classList.add(`bg-white`, `border-gray-400`);
+
+        onlineServiceCheckmarkEmoji.classList.add(`hidden`);
+        onlineServiceCheckmarkEmoji.classList.remove(`block`);
+    }
+
+})
 
 
 // NEXT PAGE FUNCTION
