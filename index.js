@@ -90,6 +90,20 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     proYearFreeMonths.classList.remove(`hidden`);
     proYearFreeMonths.classList.add(`block`);
 
+    onlineServiceMonthlyPricing.classList.add(`hidden`);
+    onlineServiceMonthlyPricing.classList.remove(`block`);
+    onlineServiceYearlyPricing.classList.add(`block`);
+    onlineServiceYearlyPricing.classList.remove(`hidden`);
+
+    largerStorageMonthlyPricing.classList.add(`hidden`);
+    largerStorageMonthlyPricing.classList.remove(`block`);
+    largerStorageYearlyPricing.classList.add(`block`);
+    largerStorageYearlyPricing.classList.remove(`hidden`);
+
+    customizableProfileMonthlyPricing.classList.add(`hidden`);
+    customizableProfileMonthlyPricing.classList.remove(`block`);
+    customizableProfileYearlyPricing.classList.add(`block`);
+    customizableProfileYearlyPricing.classList.remove(`hidden`);
 
 })
 yearlyToggleCircle.addEventListener(`click`, () => {
@@ -115,6 +129,21 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     advancedYearFreeMonths.classList.remove(`block`);
     proYearFreeMonths.classList.add(`hidden`);
     proYearFreeMonths.classList.remove(`block`);
+
+    onlineServiceMonthlyPricing.classList.add(`block`);
+    onlineServiceMonthlyPricing.classList.remove(`hidden`);
+    onlineServiceYearlyPricing.classList.add(`hidden`);
+    onlineServiceYearlyPricing.classList.remove(`block`);
+
+    largerStorageMonthlyPricing.classList.add(`block`);
+    largerStorageMonthlyPricing.classList.remove(`hidden`);
+    largerStorageYearlyPricing.classList.add(`hidden`);
+    largerStorageYearlyPricing.classList.remove(`block`);
+
+    customizableProfileMonthlyPricing.classList.add(`block`);
+    customizableProfileMonthlyPricing.classList.remove(`hidden`);
+    customizableProfileYearlyPricing.classList.add(`hidden`);
+    customizableProfileYearlyPricing.classList.remove(`block`);
 })
 
     // SUBSCRIPTION TIERS EVENT LISTENERS
