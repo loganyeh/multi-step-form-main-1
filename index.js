@@ -62,7 +62,9 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     yearlyToggleText.classList.remove(`text-gray-400`);
     yearlyToggleText.classList.add(`text-blue-900`);
 
-    arcadePricing.textContent = ``;
+    arcadePricing.textContent = `$90/year`;
+    advancedPricing.textContent = `$120/year`;
+    proPricing.textContent = `$150/year`;
 })
 yearlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked yearly toggle`);
@@ -77,7 +79,9 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     monthlyToggleText.classList.add(`text-blue-900`);
     monthlyToggleText.classList.remove(`text-gray-400`);
 
-    arcadePricing.textContent = ``;
+    arcadePricing.textContent = `$9/mo`;
+    advancedPricing.textContent = `$12/mo`;
+    proPricing.textContent = `$15/mo`;
 })
 
     // SUBSCRIPTION TIERS EVENT LISTENERS
