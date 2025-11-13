@@ -20,6 +20,9 @@ const proTier = document.getElementById(`pro-tier`);
 const arcadePricing = document.getElementById(`arcade-pricing`);
 const advancedPricing = document.getElementById(`advanced-pricing`);
 const proPricing = document.getElementById(`pro-pricing`);
+const arcadeYearFreeMonths = document.getElementById(`arcade-yearly-free-months`);
+const advancedYearFreeMonths = document.getElementById(`advanced-yearly-free-months`);
+const proYearFreeMonths = document.getElementById(`pro-yearly-free-months`);
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
@@ -65,6 +68,13 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     arcadePricing.textContent = `$90/year`;
     advancedPricing.textContent = `$120/year`;
     proPricing.textContent = `$150/year`;
+
+    arcadeYearFreeMonths.classList.remove(`hidden`);
+    arcadeYearFreeMonths.classList.add(`block`);
+    advancedYearFreeMonths.classList.remove(`hidden`);
+    advancedYearFreeMonths.classList.add(`block`);
+    proYearFreeMonths.classList.remove(`hidden`);
+    proYearFreeMonths.classList.add(`block`);
 })
 yearlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked yearly toggle`);
@@ -82,6 +92,13 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     arcadePricing.textContent = `$9/mo`;
     advancedPricing.textContent = `$12/mo`;
     proPricing.textContent = `$15/mo`;
+
+    arcadeYearFreeMonths.classList.add(`hidden`);
+    arcadeYearFreeMonths.classList.remove(`block`);
+    advancedYearFreeMonths.classList.add(`hidden`);
+    advancedYearFreeMonths.classList.remove(`block`);
+    proYearFreeMonths.classList.add(`hidden`);
+    proYearFreeMonths.classList.remove(`block`);
 })
 
     // SUBSCRIPTION TIERS EVENT LISTENERS
