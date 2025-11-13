@@ -29,6 +29,14 @@ const onlineServiceContainer = document.getElementById(`online-service-container
 const largeStorageContainer = document.getElementById(`large-storage-container`);
 const customizableProfileContainer = document.getElementById(`customizable-profile-container`);
 const onlineServiceCheckmarkEmoji = document.getElementById(`online-service-checkmark-emoji`);
+const largeStorageCheckmarkEmoji = document.getElementById(`large-storage-checkmark-emoji`);
+const customizableProfileCheckmarkEmoji = document.getElementById(`customizable-profile-checkmark-emoji`);
+const onlineServiceMonthlyPricing = document.getElementById(`online-service-monthly-pricing`);
+const onlineServiceYearlyPricing = document.getElementById(`online-service-yearly-pricing`);
+const largerStorageMonthlyPricing = document.getElementById(`larger-storage-monthly-pricing`);
+const largerStorageYearlyPricing = document.getElementById(`larger-storage-yearly-pricing`);
+const customizableProfileMonthlyPricing = document.getElementById(`customizable-profile-monthly-pricing`);
+const customizableProfileYearlyPricing = document.getElementById(`customizable-profile-yearly-pricing`);
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
@@ -81,6 +89,8 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     advancedYearFreeMonths.classList.add(`block`);
     proYearFreeMonths.classList.remove(`hidden`);
     proYearFreeMonths.classList.add(`block`);
+
+
 })
 yearlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked yearly toggle`);
@@ -171,7 +181,6 @@ onlineServiceContainer.addEventListener(`click`, () => {
     }
 
 })
-
 
 // NEXT PAGE FUNCTION
 function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
