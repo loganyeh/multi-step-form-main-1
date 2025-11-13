@@ -1,4 +1,4 @@
-
+// DOM ELEMENTS & GLOBAL VARIABLES ----------------------------------
 const nextButton = document.getElementById(`next-button`);
 const backButton = document.getElementById(`back-button`);
 let onPage = 1;
@@ -7,6 +7,14 @@ const lastPageNumber = 4;
 const pagesArray = [`page1`, `page2`, `page3`, `page4`];
 console.log(`You are on Page 1`);
 
+// LEFT AND RIGHT TOGGLE DOMS
+const monthlyToggleCircle = document.getElementById("monthly-toggle-circle");
+const yearlyToggleCircle = document.getElementById("yearly-toggle-circle");
+const monthlyToggleText = document.getElementById(`monthly-toggle-text`);
+const yearlyToggleText = document.getElementById(`yearly-toggle-text`);
+
+
+// EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
 nextButton.addEventListener(`click`, () => {
     if(onPage < lastPageNumber){
@@ -33,6 +41,36 @@ backButton.addEventListener(`click`, () => {
         previousPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
 });
+    // TOGGLE EVENT LISTENERS
+monthlyToggleCircle.addEventListener(`click`, () => {
+    console.log(`clicked monthly toggle`);
+
+    monthlyToggleCircle.classList.remove(`bg-white`, `cursor-pointer`);
+    monthlyToggleCircle.classList.add(`bg-blue-900`);
+    monthlyToggleText.classList.remove(`text-blue-900`);
+    monthlyToggleText.classList.add(`text-gray-400`);
+
+    yearlyToggleCircle.classList.add(`bg-white`, `cursor-pointer`);
+    yearlyToggleCircle.classList.remove(`bg-blue-900`);
+    yearlyToggleText.classList.remove(`text-gray-400`);
+    yearlyToggleText.classList.add(`text-blue-900`);
+
+})
+yearlyToggleCircle.addEventListener(`click`, () => {
+    console.log(`clicked yearly toggle`);
+
+    yearlyToggleCircle.classList.remove(`bg-white`, `cursor-pointer`);
+    yearlyToggleCircle.classList.add(`bg-blue-900`);
+    yearlyToggleText.classList.remove(`text-white`);
+    yearlyToggleText.classList.add(`text-gray-400`);
+
+    monthlyToggleCircle.classList.add(`bg-white`, `cursor-pointer`);
+    monthlyToggleCircle.classList.remove(`bg-blue-900`);
+    monthlyToggleText.classList.add(`text-blue-900`);
+    monthlyToggleText.classList.remove(`text-gray-400`);
+
+
+})
 
 // NEXT PAGE FUNCTION
 function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
