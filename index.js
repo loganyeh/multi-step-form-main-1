@@ -24,6 +24,20 @@ const arcadeYearFreeMonths = document.getElementById(`arcade-yearly-free-months`
 const advancedYearFreeMonths = document.getElementById(`advanced-yearly-free-months`);
 const proYearFreeMonths = document.getElementById(`pro-yearly-free-months`);
 
+    // PICK ADD-ONS DOMS
+const onlineServiceContainer = document.getElementById(`online-service-container`);
+const largerStorageContainer = document.getElementById(`larger-storage-container`);
+const customizableProfileContainer = document.getElementById(`customizable-profile-container`);
+const onlineServiceCheckmarkEmoji = document.getElementById(`online-service-checkmark-emoji`);
+const largerStorageCheckmarkEmoji = document.getElementById(`larger-storage-checkmark-emoji`);
+const customizableProfileCheckmarkEmoji = document.getElementById(`customizable-profile-checkmark-emoji`);
+const onlineServiceMonthlyPricing = document.getElementById(`online-service-monthly-pricing`);
+const onlineServiceYearlyPricing = document.getElementById(`online-service-yearly-pricing`);
+const largerStorageMonthlyPricing = document.getElementById(`larger-storage-monthly-pricing`);
+const largerStorageYearlyPricing = document.getElementById(`larger-storage-yearly-pricing`);
+const customizableProfileMonthlyPricing = document.getElementById(`customizable-profile-monthly-pricing`);
+const customizableProfileYearlyPricing = document.getElementById(`customizable-profile-yearly-pricing`);
+
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
 nextButton.addEventListener(`click`, () => {
@@ -75,6 +89,22 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     advancedYearFreeMonths.classList.add(`block`);
     proYearFreeMonths.classList.remove(`hidden`);
     proYearFreeMonths.classList.add(`block`);
+
+    onlineServiceMonthlyPricing.classList.add(`hidden`);
+    onlineServiceMonthlyPricing.classList.remove(`block`);
+    onlineServiceYearlyPricing.classList.add(`block`);
+    onlineServiceYearlyPricing.classList.remove(`hidden`);
+
+    largerStorageMonthlyPricing.classList.add(`hidden`);
+    largerStorageMonthlyPricing.classList.remove(`block`);
+    largerStorageYearlyPricing.classList.add(`block`);
+    largerStorageYearlyPricing.classList.remove(`hidden`);
+
+    customizableProfileMonthlyPricing.classList.add(`hidden`);
+    customizableProfileMonthlyPricing.classList.remove(`block`);
+    customizableProfileYearlyPricing.classList.add(`block`);
+    customizableProfileYearlyPricing.classList.remove(`hidden`);
+
 })
 yearlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked yearly toggle`);
@@ -99,6 +129,21 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     advancedYearFreeMonths.classList.remove(`block`);
     proYearFreeMonths.classList.add(`hidden`);
     proYearFreeMonths.classList.remove(`block`);
+
+    onlineServiceMonthlyPricing.classList.add(`block`);
+    onlineServiceMonthlyPricing.classList.remove(`hidden`);
+    onlineServiceYearlyPricing.classList.add(`hidden`);
+    onlineServiceYearlyPricing.classList.remove(`block`);
+
+    largerStorageMonthlyPricing.classList.add(`block`);
+    largerStorageMonthlyPricing.classList.remove(`hidden`);
+    largerStorageYearlyPricing.classList.add(`hidden`);
+    largerStorageYearlyPricing.classList.remove(`block`);
+
+    customizableProfileMonthlyPricing.classList.add(`block`);
+    customizableProfileMonthlyPricing.classList.remove(`hidden`);
+    customizableProfileYearlyPricing.classList.add(`hidden`);
+    customizableProfileYearlyPricing.classList.remove(`block`);
 })
 
     // SUBSCRIPTION TIERS EVENT LISTENERS
@@ -137,6 +182,82 @@ proTier.addEventListener(`click`, () => {
     
     proTier.classList.remove(`bg-white`, `border-gray-400`);
     proTier.classList.add(`bg-gray-50`, `border-purple-500`);
+});
+
+    // PICK ADD-ONS EVENT LISTENERS
+let isOnlineService = false; 
+onlineServiceContainer.addEventListener(`click`, () => {
+    console.log(`Clicked online service container`);
+    isOnlineService = !isOnlineService;
+    
+    if(isOnlineService){
+        console.log(`checked`);
+
+        onlineServiceContainer.classList.add(`bg-gray-50`, `border-purple-500`);
+        onlineServiceContainer.classList.remove(`bg-white`, `border-gray-400`);
+
+        onlineServiceCheckmarkEmoji.classList.add(`block`);
+        onlineServiceCheckmarkEmoji.classList.remove(`hidden`);
+    }
+    else{
+        console.log(`unchecked`);
+
+        onlineServiceContainer.classList.remove(`bg-gray-50`, `border-purple-500`);
+        onlineServiceContainer.classList.add(`bg-white`, `border-gray-400`);
+
+        onlineServiceCheckmarkEmoji.classList.add(`hidden`);
+        onlineServiceCheckmarkEmoji.classList.remove(`block`);
+    }
+});
+
+let isLargerStorage = false;
+largerStorageContainer.addEventListener(`click`, () => {
+    console.log(`Clicked larger storage container`);
+    isLargerStorage = !isLargerStorage;
+
+    if(isLargerStorage){
+        console.log(`checked`);
+
+        largerStorageContainer.classList.add(`bg-gray-50`, `border-purple-500`);
+        largerStorageContainer.classList.remove(`bg-white`, `border-gray-400`);
+
+        largerStorageCheckmarkEmoji.classList.add(`block`);
+        largerStorageCheckmarkEmoji.classList.remove(`hidden`);
+    }
+    else{
+        console.log(`unchecked`);
+
+        largerStorageContainer.classList.remove(`bg-gray-50`, `border-purple-500`);
+        largerStorageContainer.classList.add(`bg-white`, `border-gray-400`);
+
+        largerStorageCheckmarkEmoji.classList.add(`hidden`);
+        largerStorageCheckmarkEmoji.classList.remove(`block`);
+    }
+});
+
+let isCustomizableProfile = false;
+customizableProfileContainer.addEventListener(`click`, () => {
+    console.log(`Clicked customizable profile container`);
+    isCustomizableProfile = !isCustomizableProfile;
+
+    if(isCustomizableProfile){
+        console.log(`checked`);
+
+        customizableProfileContainer.classList.add(`bg-gray-50`, `border-purple-500`);
+        customizableProfileContainer.classList.remove(`bg-white`, `border-gray-400`);
+
+        customizableProfileCheckmarkEmoji.classList.add(`block`);
+        customizableProfileCheckmarkEmoji.classList.remove(`hidden`);
+    }
+    else{
+        console.log(`unchecked`);
+
+        customizableProfileContainer.classList.remove(`bg-gray-50`, `border-purple-500`);
+        customizableProfileContainer.classList.add(`bg-white`, `border-gray-400`);
+
+        customizableProfileCheckmarkEmoji.classList.add(`hidden`);
+        customizableProfileCheckmarkEmoji.classList.remove(`block`);
+    }
 });
 
 
