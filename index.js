@@ -1,4 +1,4 @@
-
+// DOM ELEMENTS & GLOBAL VARIABLES ----------------------------------
 const nextButton = document.getElementById(`next-button`);
 const backButton = document.getElementById(`back-button`);
 let onPage = 1;
@@ -7,6 +7,14 @@ const lastPageNumber = 4;
 const pagesArray = [`page1`, `page2`, `page3`, `page4`];
 console.log(`You are on Page 1`);
 
+// LEFT AND RIGHT TOGGLE DOMS
+const monthlyToggleCircle = document.getElementById("left-toggle");
+const yearlyToggleCircle = document.getElementById("right-toggle");
+const monthlyToggleText = document.getElementById(`monthly-toggle-text`);
+const yearlyToggleText = document.getElementById(`yearly-toggle-text`);
+
+
+// EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
 nextButton.addEventListener(`click`, () => {
     if(onPage < lastPageNumber){
@@ -33,6 +41,19 @@ backButton.addEventListener(`click`, () => {
         previousPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
 });
+monthlyToggleCircle.addEventListener(`click`, () => {
+    console.log(`clicked monthly toggle`);
+})
+yearlyToggleCircle.addEventListener(`click`, () => {
+    console.log(`clicked yearly toggle`);
+})
+monthlyToggleText.addEventListener(`click`, () => {
+    console.log(`clicked monthly text`);
+})
+yearlyToggleText.addEventListener(`click`, () => {
+    console.log(`clicked yearly text`);
+})
+
 
 // NEXT PAGE FUNCTION
 function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
