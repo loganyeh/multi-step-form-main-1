@@ -8,8 +8,8 @@ const pagesArray = [`page1`, `page2`, `page3`, `page4`];
 console.log(`You are on Page 1`);
 
 // LEFT AND RIGHT TOGGLE DOMS
-const monthlyToggleCircle = document.getElementById("left-toggle");
-const yearlyToggleCircle = document.getElementById("right-toggle");
+const monthlyToggleCircle = document.getElementById("monthly-toggle-circle");
+const yearlyToggleCircle = document.getElementById("yearly-toggle-circle");
 const monthlyToggleText = document.getElementById(`monthly-toggle-text`);
 const yearlyToggleText = document.getElementById(`yearly-toggle-text`);
 
@@ -41,8 +41,20 @@ backButton.addEventListener(`click`, () => {
         previousPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
 });
+    // TOGGLE EVENT LISTENERS
 monthlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked monthly toggle`);
+
+    monthlyToggleCircle.classList.remove(`bg-white`, `cursor-pointer`);
+    monthlyToggleCircle.classList.add(`bg-blue-900`);
+    monthlyToggleText.classList.remove(`text-blue-900`);
+    monthlyToggleText.classList.add(`text-gray-400`);
+
+    yearlyToggleCircle.classList.add(`bg-white`, `cursor-pointer`);
+    yearlyToggleCircle.classList.remove(`bg-blue-900`);
+    yearlyToggleText.classList.remove(`text-gray-400`);
+    yearlyToggleText.classList.add(`text-blue-900`);
+
 })
 yearlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked yearly toggle`);
