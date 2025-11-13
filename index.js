@@ -13,6 +13,11 @@ const yearlyToggleCircle = document.getElementById("yearly-toggle-circle");
 const monthlyToggleText = document.getElementById(`monthly-toggle-text`);
 const yearlyToggleText = document.getElementById(`yearly-toggle-text`);
 
+// SUBSCRIPTION TIERS DOMS
+const arcadeTier = document.getElementById(`arcade-tier`);
+const advancedTier = document.getElementById(`advanced-tier`);
+const proTier = document.getElementById(`pro-tier`);
+
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
@@ -71,6 +76,18 @@ yearlyToggleCircle.addEventListener(`click`, () => {
 
 
 })
+
+    // SUBSCRIPTION TIERS EVENT LISTENERS
+arcadeTier.addEventListener(`click`, () => {
+    console.log(`Clicked arcade tier`);
+});
+advancedTier.addEventListener(`click`, () => {
+    console.log(`Clicked advanced tier`);
+});
+proTier.addEventListener(`click`, () => {
+    console.log(`Clicked pro tier`);
+});
+
 
 // NEXT PAGE FUNCTION
 function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
