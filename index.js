@@ -26,10 +26,10 @@ const proYearFreeMonths = document.getElementById(`pro-yearly-free-months`);
 
     // PICK ADD-ONS DOMS
 const onlineServiceContainer = document.getElementById(`online-service-container`);
-const largeStorageContainer = document.getElementById(`large-storage-container`);
+const largerStorageContainer = document.getElementById(`larger-storage-container`);
 const customizableProfileContainer = document.getElementById(`customizable-profile-container`);
 const onlineServiceCheckmarkEmoji = document.getElementById(`online-service-checkmark-emoji`);
-const largeStorageCheckmarkEmoji = document.getElementById(`large-storage-checkmark-emoji`);
+const largerStorageCheckmarkEmoji = document.getElementById(`larger-storage-checkmark-emoji`);
 const customizableProfileCheckmarkEmoji = document.getElementById(`customizable-profile-checkmark-emoji`);
 const onlineServiceMonthlyPricing = document.getElementById(`online-service-monthly-pricing`);
 const onlineServiceYearlyPricing = document.getElementById(`online-service-yearly-pricing`);
@@ -187,9 +187,9 @@ proTier.addEventListener(`click`, () => {
     // PICK ADD-ONS EVENT LISTENERS
 let isOnlineService = false; 
 onlineServiceContainer.addEventListener(`click`, () => {
-    console.log(`Click online service container`);
-
+    console.log(`Clicked online service container`);
     isOnlineService = !isOnlineService;
+    
     if(isOnlineService){
         console.log(`checked`);
 
@@ -208,8 +208,58 @@ onlineServiceContainer.addEventListener(`click`, () => {
         onlineServiceCheckmarkEmoji.classList.add(`hidden`);
         onlineServiceCheckmarkEmoji.classList.remove(`block`);
     }
+});
 
-})
+let isLargerStorage = false;
+largerStorageContainer.addEventListener(`click`, () => {
+    console.log(`Clicked larger storage container`);
+    isLargerStorage = !isLargerStorage;
+
+    if(isLargerStorage){
+        console.log(`checked`);
+
+        largerStorageContainer.classList.add(`bg-gray-50`, `border-purple-500`);
+        largerStorageContainer.classList.remove(`bg-white`, `border-gray-400`);
+
+        largerStorageCheckmarkEmoji.classList.add(`block`);
+        largerStorageCheckmarkEmoji.classList.remove(`hidden`);
+    }
+    else{
+        console.log(`unchecked`);
+
+        largerStorageContainer.classList.remove(`bg-gray-50`, `border-purple-500`);
+        largerStorageContainer.classList.add(`bg-white`, `border-gray-400`);
+
+        largerStorageCheckmarkEmoji.classList.add(`hidden`);
+        largerStorageCheckmarkEmoji.classList.remove(`block`);
+    }
+});
+
+let isCustomizableProfile = false;
+customizableProfileContainer.addEventListener(`click`, () => {
+    console.log(`Clicked customizable profile container`);
+    isCustomizableProfile = !isCustomizableProfile;
+
+    if(isCustomizableProfile){
+        console.log(`checked`);
+
+        customizableProfileContainer.classList.add(`bg-gray-50`, `border-purple-500`);
+        customizableProfileContainer.classList.remove(`bg-white`, `border-gray-400`);
+
+        customizableProfileCheckmarkEmoji.classList.add(`block`);
+        customizableProfileCheckmarkEmoji.classList.remove(`hidden`);
+    }
+    else{
+        console.log(`unchecked`);
+
+        customizableProfileContainer.classList.remove(`bg-gray-50`, `border-purple-500`);
+        customizableProfileContainer.classList.add(`bg-white`, `border-gray-400`);
+
+        customizableProfileCheckmarkEmoji.classList.add(`hidden`);
+        customizableProfileCheckmarkEmoji.classList.remove(`block`);
+    }
+});
+
 
 // NEXT PAGE FUNCTION
 function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
