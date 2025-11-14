@@ -84,7 +84,7 @@ backButton.addEventListener(`click`, () => {
     }
 });
     // TOGGLE EVENT LISTENERS
-let isMonthlyToggleCircle = false;
+let isMonthlyToggleCircle = true;
 let isYearlyToggleCircle = false;
 monthlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked monthly toggle`);
@@ -252,13 +252,6 @@ arcadeTier.addEventListener(`click`, () => {
         totalBalanceSpan.innerText = `90`;
     }
 
-    totalBalanceRunningTotal = arcadeTierPrice
-    totalBalanceSpan.innerText = totalBalanceRunningTotal; 
-
-    // totalBalanceSpan.innerText = totalBalanceRunningTotal + arcadeTierPrice;
-    // console.log(totalBalanceSpan.innerText);
-    // console.log(typeof Number(totalBalanceSpan.innerText));
-
     arcadeTier.classList.remove(`bg-white`, `border-gray-400`);
     arcadeTier.classList.add(`bg-gray-50`, `border-purple-500`);
 
@@ -297,10 +290,8 @@ advancedTier.addEventListener(`click`, () => {
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$120/yr`;
-        totalBalanceSpan.innerText = `12`;
+        totalBalanceSpan.innerText = `120`;
     }
-
-    totalBalanceSpan.innerText = `12`;
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     arcadeTier.classList.add(`bg-white`, `border-gray-400`);
@@ -342,8 +333,6 @@ proTier.addEventListener(`click`, () => {
         tiersMonthlyYearlyPriceSpan.innerText = `$150/yr`;
         totalBalanceSpan.innerText = `150`;
     }
-
-    totalBalanceSpan.innerText = `15`;
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     arcadeTier.classList.add(`bg-white`, `border-gray-400`);
