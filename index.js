@@ -54,6 +54,7 @@ const totalTextSpan = document.getElementById(`total-text-span`);
 const totalPerXSpan = document.getElementById(`total-per-x-span`);
 const totalBalanceSpan = document.getElementById(`total-balance-span`);
 const totalBalanceUnitSpan = document.getElementById(`total-balance-unit-span`);
+let totalBalanceRunningTotal = 0;
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
@@ -100,12 +101,15 @@ monthlyToggleCircle.addEventListener(`click`, () => {
 
     if(isArcadeTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
+        totalBalanceSpan.innerText = `90`;
     }
     if(isAdvancedTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$120/yr`;
+        totalBalanceSpan.innerText = `120`;
     }
     if(isProTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$150/yr`;
+        totalBalanceSpan.innerText = `150`;
     }
 
     monthlyYearlyToggleText.innerText = `(Yearly)`;
@@ -165,12 +169,15 @@ yearlyToggleCircle.addEventListener(`click`, () => {
 
     if(isArcadeTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
+        totalBalanceSpan.innerText = `9`;
     }
     if(isAdvancedTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
+        totalBalanceSpan.innerText = `12`;
     }
     if(isProTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
+        totalBalanceSpan.innerText = `15`;
     }
 
     monthlyYearlyToggleText.innerText = `(Monthly)`;
@@ -217,6 +224,8 @@ let isArcadeTier = true;
 let isAdvancedTier = false;
 let isProTier = false;
 let isTierClicked = false;
+
+const arcadeTierPrice = 9;
 arcadeTier.addEventListener(`click`, () => {
     console.log(`Clicked arcade tier`);
 
@@ -236,10 +245,19 @@ arcadeTier.addEventListener(`click`, () => {
 
     if(isMonthlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
+        totalBalanceSpan.innerText = `9`;
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
+        totalBalanceSpan.innerText = `90`;
     }
+
+    totalBalanceRunningTotal = arcadeTierPrice
+    totalBalanceSpan.innerText = totalBalanceRunningTotal; 
+
+    // totalBalanceSpan.innerText = totalBalanceRunningTotal + arcadeTierPrice;
+    // console.log(totalBalanceSpan.innerText);
+    // console.log(typeof Number(totalBalanceSpan.innerText));
 
     arcadeTier.classList.remove(`bg-white`, `border-gray-400`);
     arcadeTier.classList.add(`bg-gray-50`, `border-purple-500`);
@@ -253,6 +271,7 @@ arcadeTier.addEventListener(`click`, () => {
     console.log(`isArcadeTier: ${isArcadeTier}`);
     console.log(`isAdvancedTier: ${isAdvancedTier}`);
     console.log(`isProTier: ${isProTier}`);
+
 });
 advancedTier.addEventListener(`click`, () => {
     console.log(`Clicked advanced tier`);
@@ -274,10 +293,14 @@ advancedTier.addEventListener(`click`, () => {
 
     if(isMonthlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
+        totalBalanceSpan.innerText = `12`;
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$120/yr`;
+        totalBalanceSpan.innerText = `12`;
     }
+
+    totalBalanceSpan.innerText = `12`;
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     arcadeTier.classList.add(`bg-white`, `border-gray-400`);
@@ -291,6 +314,7 @@ advancedTier.addEventListener(`click`, () => {
     console.log(`isArcadeTier: ${isArcadeTier}`);
     console.log(`isAdvancedTier: ${isAdvancedTier}`);
     console.log(`isProTier: ${isProTier}`);
+    
 });
 proTier.addEventListener(`click`, () => {
     console.log(`Clicked pro tier`);
@@ -312,10 +336,14 @@ proTier.addEventListener(`click`, () => {
 
     if(isMonthlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
+        totalBalanceSpan.innerText = `15`;
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$150/yr`;
+        totalBalanceSpan.innerText = `150`;
     }
+
+    totalBalanceSpan.innerText = `15`;
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     arcadeTier.classList.add(`bg-white`, `border-gray-400`);
@@ -331,7 +359,23 @@ proTier.addEventListener(`click`, () => {
     console.log(`isProTier: ${isProTier}`);
 });
 
+// WORKSPACE
+// tiersMonthlyYearlyPriceSpan
+
+const toAddOnlineServiceSpanPrice = onlineServiceSpanPrice.innerText;
+const toAddLargerStorageSpanPrice = largerStorageSpanPrice.innerText;
+const toAddCustomizableProfileSpanPrice = customizableProfileSpanPrice.innerText;
+
+// totalBalanceSpan
+// totalBalanceUnitSpan
+
+// console.log(toAddCustomizableProfileSpanPrice.slice(2,3));
+
+// totalBalanceSpan.innerText = toAddCustomizableProfileSpanPrice.slice(2, 3);
+
+
     // PICK ADD-ONS EVENT LISTENERS
+let totalPrice = 0;
 let isOnlineService = false; 
 onlineServiceContainer.addEventListener(`click`, () => {
     console.log(`Clicked online service container`);
@@ -340,10 +384,15 @@ onlineServiceContainer.addEventListener(`click`, () => {
     if(!isOnlineService){
         onlineServiceSummaryContainer.classList.add(`hidden`);
         onlineServiceSummaryContainer.classList.remove(`block`);
+        totalBalanceRunningTotal -= 1;
+        totalBalanceSpan.innerText = totalBalanceRunningTotal;
     }
     else{
         onlineServiceSummaryContainer.classList.add(`block`);
         onlineServiceSummaryContainer.classList.remove(`hidden`);
+        // totalBalanceSpan.innerText = String(totalBalanceRunningTotal++);
+        totalBalanceRunningTotal += 1;
+        totalBalanceSpan.innerText = totalBalanceRunningTotal;
     }
     
     if(isOnlineService){
@@ -364,6 +413,18 @@ onlineServiceContainer.addEventListener(`click`, () => {
         onlineServiceCheckmarkEmoji.classList.add(`hidden`);
         onlineServiceCheckmarkEmoji.classList.remove(`block`);
     }
+
+    if(monthlyToggleCircle){
+        // onlineServiceSpanPrice.innerText = `+$1/mo`;
+
+        // totalBalanceSpan.innerText = ``;
+    }
+    else if(yearlyToggleCircle){    
+        // onlineServiceSpanPrice.innerText = `+$10/yr`;
+    }
+
+
+
 });
 
 let isLargerStorage = false;
