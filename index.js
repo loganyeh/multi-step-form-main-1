@@ -54,7 +54,7 @@ const totalTextSpan = document.getElementById(`total-text-span`);
 const totalPerXSpan = document.getElementById(`total-per-x-span`);
 const totalBalanceSpan = document.getElementById(`total-balance-span`);
 const totalBalanceUnitSpan = document.getElementById(`total-balance-unit-span`);
-let totalBalanceRunningTotal = 0;
+let totalBalanceRunningTotal = 9;
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
@@ -246,10 +246,12 @@ arcadeTier.addEventListener(`click`, () => {
     if(isMonthlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
         totalBalanceSpan.innerText = `9`;
+        totalBalanceRunningTotal = 9;
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
         totalBalanceSpan.innerText = `90`;
+        totalBalanceRunningTotal = 90;
     }
 
     arcadeTier.classList.remove(`bg-white`, `border-gray-400`);
@@ -287,10 +289,12 @@ advancedTier.addEventListener(`click`, () => {
     if(isMonthlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
         totalBalanceSpan.innerText = `12`;
+        totalBalanceRunningTotal = 12;
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$120/yr`;
         totalBalanceSpan.innerText = `120`;
+        totalBalanceRunningTotal = 120;
     }
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
@@ -328,10 +332,12 @@ proTier.addEventListener(`click`, () => {
     if(isMonthlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
         totalBalanceSpan.innerText = `15`;
+        totalBalanceRunningTotal = 15;
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$150/yr`;
         totalBalanceSpan.innerText = `150`;
+        totalBalanceRunningTotal = 150;
     }
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
@@ -373,6 +379,12 @@ onlineServiceContainer.addEventListener(`click`, () => {
     if(!isOnlineService){
         onlineServiceSummaryContainer.classList.add(`hidden`);
         onlineServiceSummaryContainer.classList.remove(`block`);
+        if(monthlyToggleCircle){
+
+        }
+        else if(yearlyToggleCircle){    
+            
+        }gi
         totalBalanceRunningTotal -= 1;
         totalBalanceSpan.innerText = totalBalanceRunningTotal;
     }
@@ -402,17 +414,6 @@ onlineServiceContainer.addEventListener(`click`, () => {
         onlineServiceCheckmarkEmoji.classList.add(`hidden`);
         onlineServiceCheckmarkEmoji.classList.remove(`block`);
     }
-
-    if(monthlyToggleCircle){
-        // onlineServiceSpanPrice.innerText = `+$1/mo`;
-
-        // totalBalanceSpan.innerText = ``;
-    }
-    else if(yearlyToggleCircle){    
-        // onlineServiceSpanPrice.innerText = `+$10/yr`;
-    }
-
-
 
 });
 
