@@ -36,7 +36,7 @@
         <div id="pages-container" class="h-10/12 w-full border-4 border-purple-600">
 
           <!-- PAGE 1 -->
-          <div id="page1" class="block grid grid-rows-12 grid-cols-12 h-full w-full">
+          <div id="page1" class="hidden grid grid-rows-12 grid-cols-12 h-full w-full">
             <div id="page1-container" class="grid grid-rows-12 grid-cols-12 row-start-2 row-end-12 col-start-2 col-end-12">
               <h1 class="flex items-end row-start-1 row-end-3 col-start-1 col-end-13 mb-2 font-bold text-5xl text-blue-900">Personal info</h1>
               <h2 class="row-start-3 row-end-4 col-start-1 col-end-13 text-xl text-gray-500">Please provide your name, email address, and phone number.</h2>
@@ -168,7 +168,7 @@
           </div>
           
           <!-- PAGE 4 -->
-          <div id="page4" class="hidden grid grid-rows-12 grid-cols-12 h-full w-full">
+          <div id="page4" class="block grid grid-rows-12 grid-cols-12 h-full w-full">
             
             <!-- PAGE 4 CONTAINER -->
             <div id="page4-container" class="grid grid-rows-12 grid-cols-12 row-start-2 row-end-12 col-start-2 col-end-12">
@@ -204,8 +204,8 @@
 
                 <!-- total summary -->
                 <div id="total-summary-container" class="flex justify-between h-1/3 mt-6 w-full text-xl">
-                  <div id="total-price-number" class="flex justify-center items-start ml-5 text-xl text-gray-400">Total <span class="text-xl">(per month)</span></div>
-                  <div id="total-price-summary" class="flex justify-center items-start mr-12 font-bold text-3xl text-blue-800">$14/mo</div>
+                  <div id="total-price-number" class="flex justify-center items-start ml-5 text-xl text-gray-400"><span id="total-text-span">Total</span><span id="total-per-x-span" class="text-xl">(per month)</span></div>
+                  <div id="total-price-summary" class="flex justify-center items-start mr-12 font-bold text-3xl text-blue-800"><span>$</span><span id="total-balance-span">14</span><span>/</span><span id="total-balance-unit-span">mo</span></div>
                 </div>
 
               </div>

@@ -49,6 +49,11 @@ const customizableProfileSummaryContainer = document.getElementById(`customizabl
 const onlineServiceSpanPrice = document.getElementById(`online-service-span-price`);
 const largerStorageSpanPrice = document.getElementById(`larger-storage-span-price`);
 const customizableProfileSpanPrice = document.getElementById(`customizable-profile-span-price`);
+    // total doms
+const totalTextSpan = document.getElementById(`total-text-span`);
+const totalPerXSpan = document.getElementById(`total-per-x-span`);
+const totalBalanceSpan = document.getElementById(`total-balance-span`);
+const totalBalanceUnitSpan = document.getElementById(`total-balance-unit-span`);
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
@@ -86,6 +91,8 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     isMonthlyToggleCircle = false;
     console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
     console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
+
+    totalBalanceUnitSpan.innerText = `yr`;
     
     onlineServiceSpanPrice.innerText = `+$10/yr`;
     largerStorageSpanPrice.innerText = `+$20/yr`;
@@ -146,6 +153,8 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     isMonthlyToggleCircle = true;
     console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
     console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
+
+    totalBalanceUnitSpan.innerText = `mo`;
 
     // onlineServiceSpanPrice
     // largerStorageSpanPrice
