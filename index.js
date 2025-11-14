@@ -39,7 +39,9 @@ const customizableProfileMonthlyPricing = document.getElementById(`customizable-
 const customizableProfileYearlyPricing = document.getElementById(`customizable-profile-yearly-pricing`);
 
     // SUMMARY DOMS
-
+const tiersMonthlyYearlyChoice = document.getElementById(`tiers-monthly-yearly-choice`);
+const tiersMonthlyYearlyPrice = document.getElementById(`tiers-monthly-yearly-price`);
+const monthlyYearlyToggleText = document.getElementById(`monthly-yearly-toggle-text`);
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
@@ -69,8 +71,16 @@ backButton.addEventListener(`click`, () => {
     }
 });
     // TOGGLE EVENT LISTENERS
+let isMonthlyToggleCircle = false;
+let isYearlyToggleCircle = false;
 monthlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked monthly toggle`);
+    isYearlyToggleCircle = true; 
+    isMonthlyToggleCircle = false;
+    console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
+    console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
+
+    monthlyYearlyToggleText.innerText = `(Yearly)`;
 
     monthlyToggleCircle.classList.remove(`bg-white`, `cursor-pointer`);
     monthlyToggleCircle.classList.add(`bg-blue-900`);
@@ -111,6 +121,12 @@ monthlyToggleCircle.addEventListener(`click`, () => {
 })
 yearlyToggleCircle.addEventListener(`click`, () => {
     console.log(`clicked yearly toggle`);
+    isYearlyToggleCircle = false; 
+    isMonthlyToggleCircle = true;
+    console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
+    console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
+
+    monthlyYearlyToggleText.innerText = `(Monthly)`;
 
     yearlyToggleCircle.classList.remove(`bg-white`, `cursor-pointer`);
     yearlyToggleCircle.classList.add(`bg-blue-900`);
@@ -160,6 +176,9 @@ arcadeTier.addEventListener(`click`, () => {
     // isAdvancedTier = false;
     // isProTier = false;
 
+    // tiersMonthlyYearlyChoice
+    // tiersMonthlyYearlyPrice
+
     isTierClicked = true;
     if(isTierClicked){
         isArcadeTier = true;
@@ -189,6 +208,11 @@ advancedTier.addEventListener(`click`, () => {
     // isAdvancedTier = !isAdvancedTier;
     // isArcadeTier = false;
     // isProTier = false;
+
+    // tiersMonthlyYearlyChoice
+    // tiersMonthlyYearlyPrice
+
+
 
     isTierClicked = true;
     if(isTierClicked){
