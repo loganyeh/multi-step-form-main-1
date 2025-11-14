@@ -153,11 +153,23 @@ yearlyToggleCircle.addEventListener(`click`, () => {
 let isArcadeTier = false;
 let isAdvancedTier = false;
 let isProTier = false;
+let isTierClicked = false;
 arcadeTier.addEventListener(`click`, () => {
     console.log(`Clicked arcade tier`);
-    isArcadeTier = !isArcadeTier;
-    isAdvancedTier = false;
-    isProTier = false;
+    // isArcadeTier = !isArcadeTier;
+    // isAdvancedTier = false;
+    // isProTier = false;
+
+    isTierClicked = true;
+    if(isTierClicked){
+        isArcadeTier = true;
+        isAdvancedTier = false;
+        isProTier = false;
+        isTierClicked = false;
+    }
+    else{
+        isArcadeTier = false;
+    }
 
     arcadeTier.classList.remove(`bg-white`, `border-gray-400`);
     arcadeTier.classList.add(`bg-gray-50`, `border-purple-500`);
@@ -174,9 +186,20 @@ arcadeTier.addEventListener(`click`, () => {
 });
 advancedTier.addEventListener(`click`, () => {
     console.log(`Clicked advanced tier`);
-    isAdvancedTier = !isAdvancedTier;
-    isArcadeTier = false;
-    isProTier = false;
+    // isAdvancedTier = !isAdvancedTier;
+    // isArcadeTier = false;
+    // isProTier = false;
+
+    isTierClicked = true;
+    if(isTierClicked){
+        isAdvancedTier = true;
+        isArcadeTier = false;
+        isProTier = false;
+        isTierClicked = false;
+    }
+    else{
+        isAdvancedTier = false;
+    }
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     arcadeTier.classList.add(`bg-white`, `border-gray-400`);
@@ -193,9 +216,20 @@ advancedTier.addEventListener(`click`, () => {
 });
 proTier.addEventListener(`click`, () => {
     console.log(`Clicked pro tier`);
-    isProTier = !isProTier;
-    isArcadeTier = false;
-    isAdvancedTier = false;
+    // isProTier = !isProTier;
+    // isArcadeTier = false;
+    // isAdvancedTier = false;
+
+    isTierClicked = true;
+    if(isTierClicked){
+        isProTier = true;
+        isArcadeTier = false;
+        isAdvancedTier = false;
+        isTierClicked = false;
+    }
+    else{
+        isProTier = false;
+    }
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     arcadeTier.classList.add(`bg-white`, `border-gray-400`);
