@@ -80,6 +80,16 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
     console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
 
+    if(isArcadeTier){
+        tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
+    }
+    if(isAdvancedTier){
+        tiersMonthlyYearlyPriceSpan.innerText = `$120/yr`;
+    }
+    if(isProTier){
+        tiersMonthlyYearlyPriceSpan.innerText = `$150/yr`;
+    }
+
     monthlyYearlyToggleText.innerText = `(Yearly)`;
 
     monthlyToggleCircle.classList.remove(`bg-white`, `cursor-pointer`);
@@ -126,6 +136,16 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
     console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
 
+    if(isArcadeTier){
+        tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
+    }
+    if(isAdvancedTier){
+        tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
+    }
+    if(isProTier){
+        tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
+    }
+
     monthlyYearlyToggleText.innerText = `(Monthly)`;
 
     yearlyToggleCircle.classList.remove(`bg-white`, `cursor-pointer`);
@@ -166,15 +186,12 @@ yearlyToggleCircle.addEventListener(`click`, () => {
 })
 
     // SUBSCRIPTION TIERS EVENT LISTENERS
-let isArcadeTier = false;
+let isArcadeTier = true;
 let isAdvancedTier = false;
 let isProTier = false;
 let isTierClicked = false;
 arcadeTier.addEventListener(`click`, () => {
     console.log(`Clicked arcade tier`);
-    // isArcadeTier = !isArcadeTier;
-    // isAdvancedTier = false;
-    // isProTier = false;
 
     monthlyYearlyToggleTierText.innerText = `Arcade`;
     tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
@@ -188,6 +205,13 @@ arcadeTier.addEventListener(`click`, () => {
     }
     else{
         isArcadeTier = false;
+    }
+
+    if(isMonthlyToggleCircle){
+        tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
+    }
+    if(isYearlyToggleCircle){
+        tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
     }
 
     arcadeTier.classList.remove(`bg-white`, `border-gray-400`);
@@ -205,9 +229,6 @@ arcadeTier.addEventListener(`click`, () => {
 });
 advancedTier.addEventListener(`click`, () => {
     console.log(`Clicked advanced tier`);
-    // isAdvancedTier = !isAdvancedTier;
-    // isArcadeTier = false;
-    // isProTier = false;
 
     monthlyYearlyToggleTierText.innerText = `Advanced`;
     tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
@@ -222,6 +243,13 @@ advancedTier.addEventListener(`click`, () => {
     }
     else{
         isAdvancedTier = false;
+    }
+
+    if(isMonthlyToggleCircle){
+        tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
+    }
+    if(isYearlyToggleCircle){
+        tiersMonthlyYearlyPriceSpan.innerText = `$120/yr`;
     }
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
@@ -239,9 +267,6 @@ advancedTier.addEventListener(`click`, () => {
 });
 proTier.addEventListener(`click`, () => {
     console.log(`Clicked pro tier`);
-    // isProTier = !isProTier;
-    // isArcadeTier = false;
-    // isAdvancedTier = false;
 
     monthlyYearlyToggleTierText.innerText = `Pro`;
     tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
@@ -256,6 +281,13 @@ proTier.addEventListener(`click`, () => {
     }
     else{
         isProTier = false;
+    }
+
+    if(isMonthlyToggleCircle){
+        tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
+    }
+    if(isYearlyToggleCircle){
+        tiersMonthlyYearlyPriceSpan.innerText = `$150/yr`;
     }
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
