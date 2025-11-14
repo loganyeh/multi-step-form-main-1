@@ -80,13 +80,6 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
     console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
 
-    if(isMonthlyToggleCircle){
-        tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
-    }
-    else if(isYearlyToggleCircle){
-        tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
-    }
-
     monthlyYearlyToggleText.innerText = `(Yearly)`;
 
     monthlyToggleCircle.classList.remove(`bg-white`, `cursor-pointer`);
@@ -132,13 +125,6 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     isMonthlyToggleCircle = true;
     console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
     console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
-
-    if(isMonthlyToggleCircle){
-        tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
-    }
-    else if(isYearlyToggleCircle){
-        tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
-    }
 
     monthlyYearlyToggleText.innerText = `(Monthly)`;
 
