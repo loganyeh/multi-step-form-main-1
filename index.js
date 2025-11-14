@@ -39,9 +39,9 @@ const customizableProfileMonthlyPricing = document.getElementById(`customizable-
 const customizableProfileYearlyPricing = document.getElementById(`customizable-profile-yearly-pricing`);
 
     // SUMMARY DOMS
-const tiersMonthlyYearlyChoice = document.getElementById(`tiers-monthly-yearly-choice`);
-const tiersMonthlyYearlyPrice = document.getElementById(`tiers-monthly-yearly-price`);
+const monthlyYearlyToggleTierText = document.getElementById(`monthly-yearly-toggle-tier-text`);
 const monthlyYearlyToggleText = document.getElementById(`monthly-yearly-toggle-text`);
+const tiersMonthlyYearlyPriceSpan = document.getElementById(`tiers-monthly-yearly-price-span`);
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
@@ -176,8 +176,8 @@ arcadeTier.addEventListener(`click`, () => {
     // isAdvancedTier = false;
     // isProTier = false;
 
-    // tiersMonthlyYearlyChoice
-    // tiersMonthlyYearlyPrice
+    monthlyYearlyToggleTierText.innerText = `Arcade`;
+    tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
 
     isTierClicked = true;
     if(isTierClicked){
@@ -209,10 +209,8 @@ advancedTier.addEventListener(`click`, () => {
     // isArcadeTier = false;
     // isProTier = false;
 
-    // tiersMonthlyYearlyChoice
-    // tiersMonthlyYearlyPrice
-
-
+    monthlyYearlyToggleTierText.innerText = `Advanced`;
+    tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
 
     isTierClicked = true;
     if(isTierClicked){
@@ -243,6 +241,9 @@ proTier.addEventListener(`click`, () => {
     // isProTier = !isProTier;
     // isArcadeTier = false;
     // isAdvancedTier = false;
+
+    monthlyYearlyToggleTierText.innerText = `Pro`;
+    tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
 
     isTierClicked = true;
     if(isTierClicked){
