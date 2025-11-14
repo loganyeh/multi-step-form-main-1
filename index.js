@@ -42,6 +42,13 @@ const customizableProfileYearlyPricing = document.getElementById(`customizable-p
 const monthlyYearlyToggleTierText = document.getElementById(`monthly-yearly-toggle-tier-text`);
 const monthlyYearlyToggleText = document.getElementById(`monthly-yearly-toggle-text`);
 const tiersMonthlyYearlyPriceSpan = document.getElementById(`tiers-monthly-yearly-price-span`);
+    // add on summary spans doms
+const onlineServiceSummaryContainer = document.getElementById(`online-service-summary-container`);
+const largerStorageSummaryContainer = document.getElementById(`larger-storage-summary-container`);
+const customizableProfileSummaryContainer = document.getElementById(`customizable-profile-summary-container`);
+const onlineServiceSpanPrice = document.getElementById(`online-service-span-price`);
+const largerStorageSpanPrice = document.getElementById(`larger-storage-span-price`);
+const customizableProfileSpanPrice = document.getElementById(`customizable-profile-span-price`);
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
@@ -79,6 +86,10 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     isMonthlyToggleCircle = false;
     console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
     console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
+    
+    onlineServiceSpanPrice.innerText = `+$10/yr`;
+    largerStorageSpanPrice.innerText = `+$20/yr`;
+    customizableProfileSpanPrice.innerText = `+$20/yr`;
 
     if(isArcadeTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
@@ -135,6 +146,13 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     isMonthlyToggleCircle = true;
     console.log(`isMonthlyToggleCircle ${isMonthlyToggleCircle}`);
     console.log(`isYearlyToggleCircle ${isYearlyToggleCircle}`);
+
+    // onlineServiceSpanPrice
+    // largerStorageSpanPrice
+    // customizableProfileSpanPrice
+    onlineServiceSpanPrice.innerText = `+$1/mo`;
+    largerStorageSpanPrice.innerText = `+$2/mo`;
+    customizableProfileSpanPrice.innerText = `+$2/mo`;
 
     if(isArcadeTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
@@ -309,6 +327,15 @@ let isOnlineService = false;
 onlineServiceContainer.addEventListener(`click`, () => {
     console.log(`Clicked online service container`);
     isOnlineService = !isOnlineService;
+
+    if(!isOnlineService){
+        onlineServiceSummaryContainer.classList.add(`hidden`);
+        onlineServiceSummaryContainer.classList.remove(`block`);
+    }
+    else{
+        onlineServiceSummaryContainer.classList.add(`block`);
+        onlineServiceSummaryContainer.classList.remove(`hidden`);
+    }
     
     if(isOnlineService){
         console.log(`checked`);
@@ -335,6 +362,15 @@ largerStorageContainer.addEventListener(`click`, () => {
     console.log(`Clicked larger storage container`);
     isLargerStorage = !isLargerStorage;
 
+    if(!isLargerStorage){
+        largerStorageSummaryContainer.classList.add(`hidden`);
+        largerStorageSummaryContainer.classList.remove(`block`);
+    }
+    else{
+        largerStorageSummaryContainer.classList.add(`block`);
+        largerStorageSummaryContainer.classList.remove(`hidden`);
+    }
+
     if(isLargerStorage){
         console.log(`checked`);
 
@@ -359,6 +395,15 @@ let isCustomizableProfile = false;
 customizableProfileContainer.addEventListener(`click`, () => {
     console.log(`Clicked customizable profile container`);
     isCustomizableProfile = !isCustomizableProfile;
+
+    if(!isCustomizableProfile){
+        customizableProfileSummaryContainer.classList.add(`hidden`);
+        customizableProfileSummaryContainer.classList.remove(`block`);
+    }
+    else{
+        customizableProfileSummaryContainer.classList.add(`block`);
+        customizableProfileSummaryContainer.classList.remove(`hidden`);
+    }
 
     if(isCustomizableProfile){
         console.log(`checked`);
