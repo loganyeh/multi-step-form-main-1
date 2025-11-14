@@ -38,6 +38,9 @@ const largerStorageYearlyPricing = document.getElementById(`larger-storage-yearl
 const customizableProfileMonthlyPricing = document.getElementById(`customizable-profile-monthly-pricing`);
 const customizableProfileYearlyPricing = document.getElementById(`customizable-profile-yearly-pricing`);
 
+    // SUMMARY DOMS
+
+
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
 nextButton.addEventListener(`click`, () => {
@@ -147,8 +150,14 @@ yearlyToggleCircle.addEventListener(`click`, () => {
 })
 
     // SUBSCRIPTION TIERS EVENT LISTENERS
+let isArcadeTier = false;
+let isAdvancedTier = false;
+let isProTier = false;
 arcadeTier.addEventListener(`click`, () => {
     console.log(`Clicked arcade tier`);
+    isArcadeTier = !isArcadeTier;
+    isAdvancedTier = false;
+    isProTier = false;
 
     arcadeTier.classList.remove(`bg-white`, `border-gray-400`);
     arcadeTier.classList.add(`bg-gray-50`, `border-purple-500`);
@@ -158,9 +167,16 @@ arcadeTier.addEventListener(`click`, () => {
 
     proTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     proTier.classList.add(`bg-white`, `border-gray-400`);
+
+    console.log(`isArcadeTier: ${isArcadeTier}`);
+    console.log(`isAdvancedTier: ${isAdvancedTier}`);
+    console.log(`isProTier: ${isProTier}`);
 });
 advancedTier.addEventListener(`click`, () => {
     console.log(`Clicked advanced tier`);
+    isAdvancedTier = !isAdvancedTier;
+    isArcadeTier = false;
+    isProTier = false;
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     arcadeTier.classList.add(`bg-white`, `border-gray-400`);
@@ -170,9 +186,16 @@ advancedTier.addEventListener(`click`, () => {
 
     proTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     proTier.classList.add(`bg-white`, `border-gray-400`);
+
+    console.log(`isArcadeTier: ${isArcadeTier}`);
+    console.log(`isAdvancedTier: ${isAdvancedTier}`);
+    console.log(`isProTier: ${isProTier}`);
 });
 proTier.addEventListener(`click`, () => {
     console.log(`Clicked pro tier`);
+    isProTier = !isProTier;
+    isArcadeTier = false;
+    isAdvancedTier = false;
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
     arcadeTier.classList.add(`bg-white`, `border-gray-400`);
@@ -182,6 +205,10 @@ proTier.addEventListener(`click`, () => {
     
     proTier.classList.remove(`bg-white`, `border-gray-400`);
     proTier.classList.add(`bg-gray-50`, `border-purple-500`);
+
+    console.log(`isArcadeTier: ${isArcadeTier}`);
+    console.log(`isAdvancedTier: ${isAdvancedTier}`);
+    console.log(`isProTier: ${isProTier}`);
 });
 
     // PICK ADD-ONS EVENT LISTENERS
