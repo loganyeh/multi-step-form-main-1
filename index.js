@@ -6,7 +6,7 @@ const firstPageNumber = 1;
 const lastPageNumber = 5;
 const pagesArray = [`page1`, `page2`, `page3`, `page4`, `page5`];
 console.log(`You are on Page 1`);
-const devRefresh = document.getElementById(`page5`);
+const devExit = document.getElementById(`dev-exit`);
 
 // LEFT AND RIGHT TOGGLE DOMS
 const monthlyToggleCircle = document.getElementById("monthly-toggle-circle");
@@ -326,7 +326,7 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     customizableProfileYearlyPricing.classList.remove(`block`);
 })
     // DEV REFRESH
-devRefresh.addEventListener(`click`, () => {
+devExit.addEventListener(`click`, () => {
     location.reload();
 })
 
