@@ -119,16 +119,52 @@ monthlyToggleCircle.addEventListener(`click`, () => {
         tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
         totalBalanceSpan.innerText = `90`;
         totalBalanceRunningTotal = 90;
+        if(isOnlineService){
+            totalBalanceRunningTotal += 10;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     if(isAdvancedTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$120/yr`;
         totalBalanceSpan.innerText = `120`;
         totalBalanceRunningTotal = 120;
+        if(isOnlineService){
+            totalBalanceRunningTotal += 10;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     if(isProTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$150/yr`;
         totalBalanceSpan.innerText = `150`;
         totalBalanceRunningTotal = 150;
+        if(isOnlineService){
+            totalBalanceRunningTotal += 10;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
 
     monthlyYearlyToggleText.innerText = `(Yearly)`;
@@ -190,16 +226,52 @@ yearlyToggleCircle.addEventListener(`click`, () => {
         tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
         totalBalanceSpan.innerText = `9`;
         totalBalanceRunningTotal = 9;
+        if(isOnlineService){
+            totalBalanceRunningTotal += 1;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     if(isAdvancedTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
         totalBalanceSpan.innerText = `12`;
         totalBalanceRunningTotal = 12;
+        if(isOnlineService){
+            totalBalanceRunningTotal += 1;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     if(isProTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
         totalBalanceSpan.innerText = `15`;
         totalBalanceRunningTotal = 15;
+        if(isOnlineService){
+            totalBalanceRunningTotal += 1;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
 
     monthlyYearlyToggleText.innerText = `(Monthly)`;
