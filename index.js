@@ -65,7 +65,14 @@ const phoneNumberInput = document.getElementById(`phone-number-input`);
 
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
+// nextButton.disabled = true;
 nextButton.addEventListener(`click`, () => {
+    // if(nameInput.value == "" || emailAddressInput.value == "" || phoneNumberInput.value == ""){
+    //     nextButton.disabled = true;
+    // }
+    nameInput.innerText = nameInput.value;
+    emailAddressInput.innerText = emailAddressInput.value;
+    phoneNumberInput.innerText =phoneNumberInput.value;
 
     if(onPage < lastPageNumber){
         backButton.classList.remove(`hidden`);
@@ -112,6 +119,24 @@ backButton.addEventListener(`click`, () => {
         previousPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
 });
+
+// input event listenring ** input
+// nameInput.addEventListener(`input`, () => {
+//     if(emailAddressInput.value != "" && phoneNumberInput.value != ""){
+//         nextButton.disabled = false;
+//     }
+// });
+// emailAddressInput.addEventListener(`input`, () => {
+//     if(nameInput.value != "" && phoneNumberInput.value != ""){
+//         nextButton.disabled = false;
+//     }
+// });
+// phoneNumberInput.addEventListener(`input`, () => {
+//     if(nameInput.value != "" && emailAddressInput.value != ""){
+//         nextButton.disabled = false;
+//     }
+// });
+
     // TOGGLE EVENT LISTENERS
 let isMonthlyToggleCircle = true;
 let isYearlyToggleCircle = false;
