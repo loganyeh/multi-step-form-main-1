@@ -3,8 +3,8 @@ const nextButton = document.getElementById(`next-button`);
 const backButton = document.getElementById(`back-button`);
 let onPage = 1;
 const firstPageNumber = 1;
-const lastPageNumber = 4;
-const pagesArray = [`page1`, `page2`, `page3`, `page4`];
+const lastPageNumber = 5;
+const pagesArray = [`page1`, `page2`, `page3`, `page4`, `page5`];
 console.log(`You are on Page 1`);
 
 // LEFT AND RIGHT TOGGLE DOMS
@@ -67,6 +67,12 @@ nextButton.addEventListener(`click`, () => {
             nextButton.innerText = `Confirm`;
             nextButton.classList.remove(`bg-blue-900`);
             nextButton.classList.add(`bg-blue-700`);
+        }
+        if(onPage == 5){
+            nextButton.classList.remove(`block`);
+            nextButton.classList.add(`hidden`);
+            backButton.classList.remove(`block`);
+            backButton.classList.add(`hidden`);
         }
         nextButtonCounter++;
         console.log(`Page: ${onPage}. Next button clicked.`);
