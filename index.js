@@ -596,7 +596,6 @@ customizableProfileContainer.addEventListener(`click`, () => {
     }
 });
 
-
 // NEXT PAGE FUNCTION
 function nextPage(pagesArray, onPage, stepsArray, nextButtonCounter){
     console.log(`THIS IS THE nextPAGE() function`);
