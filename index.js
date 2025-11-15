@@ -60,7 +60,14 @@ let totalBalanceRunningTotal = 9;
 let nextButtonCounter = 0;
 nextButton.addEventListener(`click`, () => {
     if(onPage < lastPageNumber){
+        backButton.classList.remove(`hidden`);
+        backButton.classList.add(`block`);
         onPage++;
+        if(onPage == 4){
+            nextButton.innerText = `Confirm`;
+            nextButton.classList.remove(`bg-blue-900`);
+            nextButton.classList.add(`bg-blue-700`);
+        }
         nextButtonCounter++;
         console.log(`Page: ${onPage}. Next button clicked.`);
         nextPage(pagesArray, onPage, stepsArray, nextButtonCounter);
@@ -74,6 +81,15 @@ nextButton.addEventListener(`click`, () => {
 backButton.addEventListener(`click`, () => {
     if(onPage > firstPageNumber){
         onPage--;
+        if(onPage == 1){
+            backButton.classList.remove(`block`);
+            backButton.classList.add(`hidden`);
+        }
+        if(onPage < 4){
+            nextButton.innerText = `Next Step`;
+            nextButton.classList.remove(`bg-blue-700`);
+            nextButton.classList.add(`bg-blue-900`);
+        }
         nextButtonCounter--;
         console.log(`Page: ${onPage}. back button clicked`);
         previousPage(pagesArray, onPage, stepsArray, nextButtonCounter);
@@ -255,6 +271,10 @@ arcadeTier.addEventListener(`click`, () => {
         totalBalanceRunningTotal = 9;
         // EITHER WHEN REPICKING TIERS RESET THE ADD-ONS
         // I JUST LEFT THEM AS PREVIOUS SELECTED OR NOT
+
+        // LEFT OFF HERE 
+        // SELECT A TIER AND ALL ADD ONS AND THEN GO BACK AND CHANGE TIER AND LEAVE ADD ONS
+        // THE PRICE DOES NOT UPDATE TO WITH TIER AND ALL ADD ONS
         if(isOnlineService){
             totalBalanceRunningTotal += 1;
             totalBalanceSpan.innerText = totalBalanceRunningTotal;
