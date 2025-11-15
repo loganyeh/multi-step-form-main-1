@@ -360,21 +360,6 @@ proTier.addEventListener(`click`, () => {
     console.log(`isProTier: ${isProTier}`);
 });
 
-// WORKSPACE
-// tiersMonthlyYearlyPriceSpan
-
-const toAddOnlineServiceSpanPrice = onlineServiceSpanPrice.innerText;
-const toAddLargerStorageSpanPrice = largerStorageSpanPrice.innerText;
-const toAddCustomizableProfileSpanPrice = customizableProfileSpanPrice.innerText;
-
-// totalBalanceSpan
-// totalBalanceUnitSpan
-
-// console.log(toAddCustomizableProfileSpanPrice.slice(2,3));
-
-// totalBalanceSpan.innerText = toAddCustomizableProfileSpanPrice.slice(2, 3);
-
-
     // PICK ADD-ONS EVENT LISTENERS
 let totalPrice = 0;
 let isOnlineService = false; 
