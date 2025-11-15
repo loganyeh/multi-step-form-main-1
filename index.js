@@ -102,14 +102,17 @@ monthlyToggleCircle.addEventListener(`click`, () => {
     if(isArcadeTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
         totalBalanceSpan.innerText = `90`;
+        totalBalanceRunningTotal = 90;
     }
     if(isAdvancedTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$120/yr`;
         totalBalanceSpan.innerText = `120`;
+        totalBalanceRunningTotal = 120;
     }
     if(isProTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$150/yr`;
         totalBalanceSpan.innerText = `150`;
+        totalBalanceRunningTotal = 150;
     }
 
     monthlyYearlyToggleText.innerText = `(Yearly)`;
@@ -170,14 +173,17 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     if(isArcadeTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
         totalBalanceSpan.innerText = `9`;
+        totalBalanceRunningTotal = 9;
     }
     if(isAdvancedTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
         totalBalanceSpan.innerText = `12`;
+        totalBalanceRunningTotal = 12;
     }
     if(isProTier){
         tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
         totalBalanceSpan.innerText = `15`;
+        totalBalanceRunningTotal = 15;
     }
 
     monthlyYearlyToggleText.innerText = `(Monthly)`;
@@ -379,21 +385,27 @@ onlineServiceContainer.addEventListener(`click`, () => {
     if(!isOnlineService){
         onlineServiceSummaryContainer.classList.add(`hidden`);
         onlineServiceSummaryContainer.classList.remove(`block`);
-        if(monthlyToggleCircle){
-
+        if(isMonthlyToggleCircle){
+            totalBalanceRunningTotal -= 1;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
         }
-        else if(yearlyToggleCircle){    
-            
-        }gi
-        totalBalanceRunningTotal -= 1;
-        totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        else if(isYearlyToggleCircle){    
+            totalBalanceRunningTotal -= 10;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     else{
         onlineServiceSummaryContainer.classList.add(`block`);
         onlineServiceSummaryContainer.classList.remove(`hidden`);
         // totalBalanceSpan.innerText = String(totalBalanceRunningTotal++);
-        totalBalanceRunningTotal += 1;
-        totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        if(isMonthlyToggleCircle){
+            totalBalanceRunningTotal += 1;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        else if(isYearlyToggleCircle){    
+            totalBalanceRunningTotal += 10;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     
     if(isOnlineService){
@@ -425,10 +437,28 @@ largerStorageContainer.addEventListener(`click`, () => {
     if(!isLargerStorage){
         largerStorageSummaryContainer.classList.add(`hidden`);
         largerStorageSummaryContainer.classList.remove(`block`);
+
+        if(isMonthlyToggleCircle){
+            totalBalanceRunningTotal -= 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        else if(isYearlyToggleCircle){    
+            totalBalanceRunningTotal -= 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     else{
         largerStorageSummaryContainer.classList.add(`block`);
         largerStorageSummaryContainer.classList.remove(`hidden`);
+
+        if(isMonthlyToggleCircle){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        else if(isYearlyToggleCircle){    
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
 
     if(isLargerStorage){
@@ -459,10 +489,28 @@ customizableProfileContainer.addEventListener(`click`, () => {
     if(!isCustomizableProfile){
         customizableProfileSummaryContainer.classList.add(`hidden`);
         customizableProfileSummaryContainer.classList.remove(`block`);
+
+        if(isMonthlyToggleCircle){
+            totalBalanceRunningTotal -= 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        else if(isYearlyToggleCircle){    
+            totalBalanceRunningTotal -= 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     else{
         customizableProfileSummaryContainer.classList.add(`block`);
         customizableProfileSummaryContainer.classList.remove(`hidden`);
+
+        if(isMonthlyToggleCircle){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        else if(isYearlyToggleCircle){    
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
 
     if(isCustomizableProfile){
