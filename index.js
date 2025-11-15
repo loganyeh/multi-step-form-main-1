@@ -253,11 +253,37 @@ arcadeTier.addEventListener(`click`, () => {
         tiersMonthlyYearlyPriceSpan.innerText = `$9/mo`;
         totalBalanceSpan.innerText = `9`;
         totalBalanceRunningTotal = 9;
+        // EITHER WHEN REPICKING TIERS RESET THE ADD-ONS
+        // I JUST LEFT THEM AS PREVIOUS SELECTED OR NOT
+        if(isOnlineService){
+            totalBalanceRunningTotal += 1;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$90/yr`;
         totalBalanceSpan.innerText = `90`;
         totalBalanceRunningTotal = 90;
+        if(isOnlineService){
+            totalBalanceRunningTotal += 10;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
 
     arcadeTier.classList.remove(`bg-white`, `border-gray-400`);
@@ -296,11 +322,37 @@ advancedTier.addEventListener(`click`, () => {
         tiersMonthlyYearlyPriceSpan.innerText = `$12/mo`;
         totalBalanceSpan.innerText = `12`;
         totalBalanceRunningTotal = 12;
+
+        if(isOnlineService){
+            totalBalanceRunningTotal += 1;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$120/yr`;
         totalBalanceSpan.innerText = `120`;
         totalBalanceRunningTotal = 120;
+
+        if(isOnlineService){
+            totalBalanceRunningTotal += 10;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
@@ -339,11 +391,37 @@ proTier.addEventListener(`click`, () => {
         tiersMonthlyYearlyPriceSpan.innerText = `$15/mo`;
         totalBalanceSpan.innerText = `15`;
         totalBalanceRunningTotal = 15;
+
+        if(isOnlineService){
+            totalBalanceRunningTotal += 1;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 2;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
     if(isYearlyToggleCircle){
         tiersMonthlyYearlyPriceSpan.innerText = `$150/yr`;
         totalBalanceSpan.innerText = `150`;
         totalBalanceRunningTotal = 150;
+
+        if(isOnlineService){
+            totalBalanceRunningTotal += 10;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isLargerStorage){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
+        if(isCustomizableProfile){
+            totalBalanceRunningTotal += 20;
+            totalBalanceSpan.innerText = totalBalanceRunningTotal;
+        }
     }
 
     arcadeTier.classList.remove(`bg-gray-50`, `border-purple-500`);
