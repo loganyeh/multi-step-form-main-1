@@ -28,34 +28,34 @@
     </div>
 
     <!-- RIGHT SIDE OF THE PAGE ≈ BORDER -->
-    <form action="" class="h-full w-9/12 border-4 border-blue-600">
+    <form action="" class="h-full w-9/12">
       <div id="right-side-of-page" class="h-full w-full">
 
         <!-- TOP HALF OF RIGHT SIDE -->
         <!-- PAGES -->
-        <div id="pages-container" class="h-10/12 w-full border-4 border-purple-600">
+        <div id="pages-container" class="h-10/12 w-full">
 
           <!-- PAGE 1 -->
-          <div id="page1" class="hidden grid grid-rows-12 grid-cols-12 h-full w-full">
+          <div id="page1" class="block grid grid-rows-12 grid-cols-12 h-full w-full">
             <div id="page1-container" class="grid grid-rows-12 grid-cols-12 row-start-2 row-end-12 col-start-2 col-end-12">
               <h1 class="flex items-end row-start-1 row-end-3 col-start-1 col-end-13 mb-2 font-bold text-5xl text-blue-900">Personal info</h1>
               <h2 class="row-start-3 row-end-4 col-start-1 col-end-13 text-xl text-gray-500">Please provide your name, email address, and phone number.</h2>
 
               <!-- NAME -->
               <label class="flex items-end row-start-4 row-end-5 col-start-1 col-end-13 text-xl text-blue-900">Name</label>
-              <input id="name" class="mt-2 mr-12 mb-6 row-start-5 row-end-7 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.Stephen King" required>
+              <input id="name-input" class="mt-2 mr-12 mb-6 row-start-5 row-end-7 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.Stephen King" required>
               <!-- EMAIL ADDRESS -->
               <label class="flex items-end row-start-7 row-end-8 col-start-1 col-end-13 text-xl text-blue-900">Email Address</label>
-              <input id="email-address" class="mt-2 mr-12 mb-6 row-start-8 row-end-10 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.stephenking@lorem.com" required>
+              <input id="email-address-input" class="mt-2 mr-12 mb-6 row-start-8 row-end-10 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.stephenking@lorem.com" required>
               <!-- PHONE NUMBER -->
               <label class="flex items-end row-start-10 row-end-11 col-start-1 col-end-13 text-xl text-blue-900">Phone Number</label>
-              <input id="phone-number" class="mt-2 mr-12 mb-6 row-start-11 row-end-13 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.+1 234 567 890" required>
+              <input id="phone-number-input" class="mt-2 mr-12 mb-6 row-start-11 row-end-13 col-start-1 col-end-13 text-xl font-medium border-2 border-gray-300 rounded-xl" type="text" placeholder=" e.g.+1 234 567 890" required>
 
             </div>
           </div>
           
           <!-- Page 2 -->
-          <div id="page2" class="block grid grid-rows-12 grid-cols-12 h-full w-full">
+          <div id="page2" class="hidden grid grid-rows-12 grid-cols-12 h-full w-full">
 
             <!-- PAGE 2 CONTAINER -->
             <div id="page2-container" class="grid grid-rows-12 grid-cols-12 row-start-2 row-end-12 col-start-2 col-end-12">
@@ -168,7 +168,7 @@
           </div>
           
           <!-- PAGE 4 -->
-          <div id="page4" class="block grid grid-rows-12 grid-cols-12 h-full w-full">
+          <div id="page4" class="hidden grid grid-rows-12 grid-cols-12 h-full w-full">
             
             <!-- PAGE 4 CONTAINER -->
             <div id="page4-container" class="grid grid-rows-12 grid-cols-12 row-start-2 row-end-12 col-start-2 col-end-12">
@@ -217,9 +217,16 @@
             </div>
           </div>
           
-          <!-- PAGE 5 : CONFIRMATION PAG -->
-          <!-- <div id="page4" class="4 hidden h-full w-full bg-green-200">THANk YOU</div> -->
-
+          <!-- PAGE 5 : CONFIRMATION PAGE -->
+          <div id="page5" class="hidden h-full w-full flex flex-col justify-center items-center">
+            <img src="assets/images/icon-thank-you.svg" alt="#" id="dev-exit" class="block h-36 w-36 cursor-pointer">
+            <span class="mt-12 mb-6 text-blue-900 text-5xl font-bold">Thank you!</span>
+            <span class="text-center text-gray-500 text-2xl">
+              Thanks for confirming your subscription! We hope you have<br>
+              fun using our platform. If you ever need support, please feel free<br>
+              to email us at support@loremgaming.com
+            </span>
+          </div>
 
         </div>
 
@@ -227,7 +234,7 @@
         <!-- GO BACK AND NEXT/SUBMIT BUTTONS -->
         <div id="back-next-buttons" class="h-2/12 w-full grid grid-rows-12 grid-cols-25">
           <button id="back-button" class="hidden row-start-3 row-end-8 col-start-5 col-end-8 text-2xl text-gray-500 hover:text-blue-800 hover:underline active:bg-red-400 cursor-pointer">Go Back</button>
-          <button id="next-button" class="block row-start-3 row-end-8 col-start-20 col-end-23 text-2xl text-white rounded-2xl bg-blue-900 hover:bg-blue-800 active:bg-green-400 cursor-pointer shadow-sm" type="submit">Next Step</button>
+          <button id="next-button" class="block row-start-3 row-end-8 col-start-20 col-end-23 text-2xl text-white rounded-2xl bg-blue-900 hover:bg-blue-800 active:bg-green-400 cursor-pointer shadow-sm" type="button">Next Step</button>
           <!-- add disabled to button to prevent from going to next page -->
         </div>
 

@@ -3,9 +3,10 @@ const nextButton = document.getElementById(`next-button`);
 const backButton = document.getElementById(`back-button`);
 let onPage = 1;
 const firstPageNumber = 1;
-const lastPageNumber = 4;
-const pagesArray = [`page1`, `page2`, `page3`, `page4`];
+const lastPageNumber = 5;
+const pagesArray = [`page1`, `page2`, `page3`, `page4`, `page5`];
 console.log(`You are on Page 1`);
+const devExit = document.getElementById(`dev-exit`);
 
 // LEFT AND RIGHT TOGGLE DOMS
 const monthlyToggleCircle = document.getElementById("monthly-toggle-circle");
@@ -56,9 +57,23 @@ const totalBalanceSpan = document.getElementById(`total-balance-span`);
 const totalBalanceUnitSpan = document.getElementById(`total-balance-unit-span`);
 let totalBalanceRunningTotal = 9;
 
+    // page 1 input box DOMS
+const nameInput = document.getElementById(`name-input`);
+const emailAddressInput = document.getElementById(`email-address-input`);
+const phoneNumberInput = document.getElementById(`phone-number-input`);
+
+
 // EVENT LISTENERS ---------------------------------------------------
 let nextButtonCounter = 0;
+// nextButton.disabled = true;
 nextButton.addEventListener(`click`, () => {
+    // if(nameInput.value == "" || emailAddressInput.value == "" || phoneNumberInput.value == ""){
+    //     nextButton.disabled = true;
+    // }
+    nameInput.innerText = nameInput.value;
+    emailAddressInput.innerText = emailAddressInput.value;
+    phoneNumberInput.innerText =phoneNumberInput.value;
+
     if(onPage < lastPageNumber){
         backButton.classList.remove(`hidden`);
         backButton.classList.add(`block`);
@@ -67,6 +82,12 @@ nextButton.addEventListener(`click`, () => {
             nextButton.innerText = `Confirm`;
             nextButton.classList.remove(`bg-blue-900`);
             nextButton.classList.add(`bg-blue-700`);
+        }
+        if(onPage == 5){
+            nextButton.classList.remove(`block`);
+            nextButton.classList.add(`hidden`);
+            backButton.classList.remove(`block`);
+            backButton.classList.add(`hidden`);
         }
         nextButtonCounter++;
         console.log(`Page: ${onPage}. Next button clicked.`);
@@ -77,7 +98,6 @@ nextButton.addEventListener(`click`, () => {
         nextPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
 });
-
 backButton.addEventListener(`click`, () => {
     if(onPage > firstPageNumber){
         onPage--;
@@ -99,6 +119,24 @@ backButton.addEventListener(`click`, () => {
         previousPage(pagesArray, onPage, stepsArray, nextButtonCounter);
     }
 });
+
+// input event listenring ** input
+// nameInput.addEventListener(`input`, () => {
+//     if(emailAddressInput.value != "" && phoneNumberInput.value != ""){
+//         nextButton.disabled = false;
+//     }
+// });
+// emailAddressInput.addEventListener(`input`, () => {
+//     if(nameInput.value != "" && phoneNumberInput.value != ""){
+//         nextButton.disabled = false;
+//     }
+// });
+// phoneNumberInput.addEventListener(`input`, () => {
+//     if(nameInput.value != "" && emailAddressInput.value != ""){
+//         nextButton.disabled = false;
+//     }
+// });
+
     // TOGGLE EVENT LISTENERS
 let isMonthlyToggleCircle = true;
 let isYearlyToggleCircle = false;
@@ -311,6 +349,10 @@ yearlyToggleCircle.addEventListener(`click`, () => {
     customizableProfileMonthlyPricing.classList.remove(`hidden`);
     customizableProfileYearlyPricing.classList.add(`hidden`);
     customizableProfileYearlyPricing.classList.remove(`block`);
+})
+    // DEV REFRESH
+devExit.addEventListener(`click`, () => {
+    location.reload();
 })
 
     // SUBSCRIPTION TIERS EVENT LISTENERS
